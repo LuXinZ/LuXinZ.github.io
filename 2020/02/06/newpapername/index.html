@@ -1,13 +1,85 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+
+
 
   
-  <title>JS 高级程序设计 读书笔记 | 个人博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="变量， 范围， 和 内存primitive 原始值 和 reference values 引用值 变量中包含两种不同的类型数据 原始值 就是简单的数据，基本数据类型 引用值： 就是由多个值组成的对象   将数据值分配给一个变量之后，JS 必须要确定他的数据类型是原始值还是引用值。 六个原始&#x2F;基本类型 ： undefined ，null , boolean, string, number, symb">
+
+
+<html class="theme-next pisces use-motion" lang="zh">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="变量， 范围， 和 内存primitive 原始值 和 reference values 引用值 变量中包含两种不同的类型数据 原始值 就是简单的数据，基本数据类型 引用值： 就是由多个值组成的对象   将数据值分配给一个变量之后，JS 必须要确定他的数据类型是原始值还是引用值。 六个原始&#x2F;基本类型 ： undefined ，null , boolean, string, number, symb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS 高级程序设计 读书笔记">
 <meta property="og:url" content="2020/02/06/newpapername/index.html">
@@ -18,79 +90,214 @@
 <meta property="article:modified_time" content="2020-02-05T16:57:28.317Z">
 <meta property="article:author" content="Luxin Z">
 <meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="LuXinZ.github.io/2020/02/06/newpapername/"/>
+
+
+
+
+
+  <title>JS 高级程序设计 读书笔记 | 个人博客</title>
   
-    <link rel="alternate" href="/atom.xml" title="个人博客" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="css/style.css">
+
+
+
+
+
+
+
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" target="_blank" rel="noopener" id="logo">个人博客</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" target="_blank" rel="noopener" id="subtitle">每日笔记</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/" target="_blank" rel="noopener">Home</a>
-        
-          <a class="main-nav-link" href="/archives" target="_blank" rel="noopener">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" target="_blank" rel="noopener" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="LuXinZ.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-newpapername" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="2020/02/06/newpapername/" target="_blank" rel="noopener" class="article-date">
-  <time datetime="2020-02-05T16:27:57.000Z" itemprop="datePublished">2020-02-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+
   
-    <h1 class="article-title" itemprop="name">
-      JS 高级程序设计 读书笔记
-    </h1>
+  
+    
   
 
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" target="_blank"  class="brand" rel="start noopener">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">每日笔记</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" target="_blank" rel="section noopener">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" target="_blank" rel="section noopener">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="LuXinZ.github.io2020/02/06/newpapername/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luxin Z">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JS 高级程序设计 读书笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-06T00:27:57+08:00">
+                2020-02-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
       
         <h1 id="变量，-范围，-和-内存"><a href="#变量，-范围，-和-内存" target="_blank" rel="noopener" class="headerlink" title="变量， 范围， 和 内存"></a>变量， 范围， 和 内存</h1><h2 id="primitive-原始值-和-reference-values-引用值"><a href="#primitive-原始值-和-reference-values-引用值" target="_blank" rel="noopener" class="headerlink" title="primitive 原始值 和 reference values 引用值"></a>primitive 原始值 和 reference values 引用值</h2><ul>
 <li>变量中包含两种不同的类型数据<ul>
@@ -201,93 +408,344 @@ const 声明仅适用于处于顶级的基本类型和对象。换句话说，co
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="2020/02/06/newpapername/" data-id="ck6a7c1wq0000lwvmbjgrdnx4" class="article-share-link">Share</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+
       
       
     </footer>
   </div>
   
-    
   
-</article>
+  
+  </article>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
 
-  
-    
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/02/" target="_blank" rel="noopener">February 2020</a></li></ul>
+    <div class="post-spread">
+      
     </div>
   </div>
 
 
+          </div>
+          
+
+
+          
+
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
+
+
+
+        </div>
         
-          <li>
-            <a href="2020/02/06/newpapername/" target="_blank" rel="noopener">JS 高级程序设计 读书笔记</a>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
           </li>
-        
-      </ul>
-    </div>
-  </div>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-  
-</aside>
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Luxin Z</p>
+              <p class="site-description motion-element" itemprop="description">用于分享读书笔记</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/" target="_blank" rel="noopener">
+              
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#变量，-范围，-和-内存" target="_blank" rel="noopener"><span class="nav-number">1.</span> <span class="nav-text">变量， 范围， 和 内存</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#primitive-原始值-和-reference-values-引用值" target="_blank" rel="noopener"><span class="nav-number">1.1.</span> <span class="nav-text">primitive 原始值 和 reference values 引用值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Dynamic-properties-动态属性" target="_blank" rel="noopener"><span class="nav-number">1.1.1.</span> <span class="nav-text">Dynamic properties 动态属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Copying-Values-复制值" target="_blank" rel="noopener"><span class="nav-number">1.1.2.</span> <span class="nav-text">Copying Values 复制值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Argument-Passing-参数传递" target="_blank" rel="noopener"><span class="nav-number">1.1.3.</span> <span class="nav-text">Argument Passing  参数传递</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Determining-Type-确定类型" target="_blank" rel="noopener"><span class="nav-number">1.1.4.</span> <span class="nav-text">Determining Type  确定类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EXECUTION-CONTEXT-AND-SCOPE-执行上下和作用域" target="_blank" rel="noopener"><span class="nav-number">1.2.</span> <span class="nav-text">EXECUTION CONTEXT AND SCOPE 执行上下和作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Scope-Chain-Augmentatio-延长作用域链" target="_blank" rel="noopener"><span class="nav-number">1.2.1.</span> <span class="nav-text">Scope Chain Augmentatio 延长作用域链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量声明" target="_blank" rel="noopener"><span class="nav-number">1.2.2.</span> <span class="nav-text">变量声明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Function-Scope-Declaration-Using-var-使用var的函数声明范围" target="_blank" rel="noopener"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">Function Scope Declaration Using var 使用var的函数声明范围</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Block-Scope-Declaration-Using-let-使用let的块级声明" target="_blank" rel="noopener"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">Block Scope Declaration Using let 使用let的块级声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Constant-Declaration-Using-const-使用const的常量声明" target="_blank" rel="noopener"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">Constant Declaration Using const 使用const的常量声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Identifier-Lookup-标识符查询" target="_blank" rel="noopener"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">Identifier Lookup 标识符查询</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Garbage-Collection-垃圾收集" target="_blank" rel="noopener"><span class="nav-number">1.3.</span> <span class="nav-text">Garbage Collection 垃圾收集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mark-and-Sweep-标记清除" target="_blank" rel="noopener"><span class="nav-number">1.3.1.</span> <span class="nav-text">Mark-and-Sweep  标记清除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference-Counting-引用计数" target="_blank" rel="noopener"><span class="nav-number">1.3.2.</span> <span class="nav-text">Reference Counting 引用计数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Performance" target="_blank" rel="noopener"><span class="nav-number">1.3.3.</span> <span class="nav-text">Performance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Managing-Memory" target="_blank" rel="noopener"><span class="nav-number">1.3.4.</span> <span class="nav-text">Managing Memory</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Performance-Boosts-with-const-and-let-Declarations" target="_blank" rel="noopener"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">Performance Boosts with const and let Declarations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hidden-Classes-and-the-delete-Operation-隐藏类和删除操作" target="_blank" rel="noopener"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">Hidden Classes and the delete Operation 隐藏类和删除操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Memory-Leaks-内存泄露" target="_blank" rel="noopener"><span class="nav-number">1.3.4.3.</span> <span class="nav-text">Memory Leaks 内存泄露</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Static-Allocation-and-Object-Pools-Static-Allocation-and-Object-Pools" target="_blank" rel="noopener"><span class="nav-number">1.3.4.4.</span> <span class="nav-text">Static Allocation and Object Pools Static Allocation and Object Pools</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary" target="_blank" rel="noopener"><span class="nav-number">1.3.5.</span> <span class="nav-text">Summary</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic-Reference-Type" target="_blank" rel="noopener"><span class="nav-number">2.</span> <span class="nav-text">Basic Reference Type</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Date-Type-日期类型" target="_blank" rel="noopener"><span class="nav-number">2.1.</span> <span class="nav-text">The Date Type 日期类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Inherited-Methods-继承方法" target="_blank" rel="noopener"><span class="nav-number">2.1.1.</span> <span class="nav-text">Inherited Methods 继承方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Date-Formatting-Methods-日期格式化方法" target="_blank" rel="noopener"><span class="nav-number">2.1.2.</span> <span class="nav-text">Date-Formatting Methods 日期格式化方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Date-Time-Component-Methods" target="_blank" rel="noopener"><span class="nav-number">2.1.3.</span> <span class="nav-text">Date&#x2F;Time Component Methods</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-RegExp-Type-正则类型" target="_blank" rel="noopener"><span class="nav-number">2.2.</span> <span class="nav-text">The RegExp Type  正则类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RegExp-Instance-Properties" target="_blank" rel="noopener"><span class="nav-number">2.2.1.</span> <span class="nav-text">RegExp Instance Properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RegExp-Instance-Methods-RegExp-实例方法" target="_blank" rel="noopener"><span class="nav-number">2.2.2.</span> <span class="nav-text">RegExp Instance Methods  RegExp 实例方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RegExp-Constructor-Properties-构造函数属性" target="_blank" rel="noopener"><span class="nav-number">2.2.3.</span> <span class="nav-text">RegExp Constructor Properties 构造函数属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pattern-Limitations" target="_blank" rel="noopener"><span class="nav-number">2.2.4.</span> <span class="nav-text">Pattern Limitations</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Primitive-Wrapper-Types" target="_blank" rel="noopener"><span class="nav-number">2.3.</span> <span class="nav-text">Primitive Wrapper Types</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Boolean-Type" target="_blank" rel="noopener"><span class="nav-number">2.3.1.</span> <span class="nav-text">The Boolean Type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Number-Type-·" target="_blank" rel="noopener"><span class="nav-number">2.3.2.</span> <span class="nav-text">The Number Type ·</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-isInteger-Method-and-Safe-Integers" target="_blank" rel="noopener"><span class="nav-number">2.3.3.</span> <span class="nav-text">The isInteger() Method and Safe Integers</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-String-Type" target="_blank" rel="noopener"><span class="nav-number">2.4.</span> <span class="nav-text">The String Type</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-JavaScript-Character" target="_blank" rel="noopener"><span class="nav-number">2.4.1.</span> <span class="nav-text">The JavaScript Character</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-normalize-Method" target="_blank" rel="noopener"><span class="nav-number">2.4.2.</span> <span class="nav-text">The normalize() Method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-Manipulation-Methods" target="_blank" rel="noopener"><span class="nav-number">2.4.3.</span> <span class="nav-text">String-Manipulation Methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-Location-Methods" target="_blank" rel="noopener"><span class="nav-number">2.4.4.</span> <span class="nav-text">String Location Methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-Inclusion-Methods" target="_blank" rel="noopener"><span class="nav-number">2.4.5.</span> <span class="nav-text">String Inclusion Methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-trim-Method" target="_blank" rel="noopener"><span class="nav-number">2.4.6.</span> <span class="nav-text">The trim() Method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-repeat-Method" target="_blank" rel="noopener"><span class="nav-number">2.4.7.</span> <span class="nav-text">The repeat() Method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-padStart-and-padEnd-Methods" target="_blank" rel="noopener"><span class="nav-number">2.4.8.</span> <span class="nav-text">The padStart() and padEnd() Methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-Iterators-and-Destructuring" target="_blank" rel="noopener"><span class="nav-number">2.4.9.</span> <span class="nav-text">String Iterators and Destructuring</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-Case-Methods" target="_blank" rel="noopener"><span class="nav-number">2.4.10.</span> <span class="nav-text">String Case Methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-Pattern-Matching-Methods" target="_blank" rel="noopener"><span class="nav-number">2.4.11.</span> <span class="nav-text">String Pattern-Matching Methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-localeCompare-Method" target="_blank" rel="noopener"><span class="nav-number">2.4.12.</span> <span class="nav-text">The localeCompare() Method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML-Methods" target="_blank" rel="noopener"><span class="nav-number">2.4.13.</span> <span class="nav-text">HTML Methods</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Singleton-Built-in-objects" target="_blank" rel="noopener"><span class="nav-number">2.5.</span> <span class="nav-text">Singleton Built-in objects</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Global-Object" target="_blank" rel="noopener"><span class="nav-number">2.5.1.</span> <span class="nav-text">The Global Object</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#URI-Encoding-Methods" target="_blank" rel="noopener"><span class="nav-number">2.5.1.1.</span> <span class="nav-text">URI-Encoding Methods</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-eval-Method" target="_blank" rel="noopener"><span class="nav-number">2.5.1.2.</span> <span class="nav-text">The eval() Method</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Global-Object-Properties" target="_blank" rel="noopener"><span class="nav-number">2.5.1.3.</span> <span class="nav-text">Global Object Properties</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Window-Object" target="_blank" rel="noopener"><span class="nav-number">2.5.1.4.</span> <span class="nav-text">The Window Object</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Math-Object" target="_blank" rel="noopener"><span class="nav-number">2.5.2.</span> <span class="nav-text">The Math Object</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Math-Object-Properties" target="_blank" rel="noopener"><span class="nav-number">2.5.2.1.</span> <span class="nav-text">Math Object Properties</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-min-and-max-Methods" target="_blank" rel="noopener"><span class="nav-number">2.5.2.2.</span> <span class="nav-text">The min() and max() Methods</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rounding-Methods" target="_blank" rel="noopener"><span class="nav-number">2.5.2.3.</span> <span class="nav-text">Rounding Methods</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-random-Method" target="_blank" rel="noopener"><span class="nav-number">2.5.2.4.</span> <span class="nav-text">The random() Method</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Other-Methods" target="_blank" rel="noopener"><span class="nav-number">2.5.2.5.</span> <span class="nav-text">Other Methods</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary-1" target="_blank" rel="noopener"><span class="nav-number">2.6.</span> <span class="nav-text">Summary</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
         
       </div>
-      <footer id="footer">
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Luxin Z</span>
+
   
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 Luxin Z<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" target="_blank" rel="noopener" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" target="_blank" rel="noopener" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="fancybox/jquery.fancybox.css">
-
-  
-<script src="fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="js/script.js"></script>
-
-
-
+    
 
   </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>
