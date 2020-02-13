@@ -231,6 +231,125 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="LuXinZ.github.io2020/02/13/面试题大图上传功能/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luxin Z">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="2020/02/13/面试题大图上传功能/" target="_blank" rel="noopener" itemprop="url">面试题大图上传功能</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-13T20:03:33+08:00">
+                2020-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="LuXinZ.github.io2020/02/08/vue学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -811,7 +930,19 @@ Object.assign() 有效地从每个源对象执行浅拷贝。如果多个源对�
 在这里，keys 变量由包含 name ,age, job 和sayName 的数组填充。这里通常使用for-in出现的顺序。在Person 的实例上调用的时候，Object.keys() 返回name 和age 的数组，这是仅有的两个实例属性。<br>如果需要所有实例属性(无论是否可枚举)的列表，则可以使用Object.getOwnPropertyName() 以相同的方式。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> keys = <span class="built_in">Object</span>.getOwnPropertyNames(Person.prototype); </span><br><span class="line"><span class="built_in">console</span>.log(keys);   <span class="comment">// "constructor,name,age,job,sayName"</span></span><br></pre></td></tr></table></figure>
 请注意，结果列表中包含了不可枚举的constructor属性。Object.keys() 和Object.getOwnPropertyName() 可能是for-in 的替代品<br>随着ES6符号的引入，需要Object.getOwnPropertyNames()。 因为符号键属性没有名称概念，所以getOwnPropertyNames() 变得显而易见，因此引入了Object.getOwnPropertySymbols() 它提供了与Object.getOwnPropertyNames() 相同的行为<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> k1 = <span class="built_in">Symbol</span>(<span class="string">'k1'</span>),    </span><br><span class="line">k2 = <span class="built_in">Symbol</span>(<span class="string">'k2'</span>);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> o = &#123;  [k1]: <span class="string">'k1'</span>,  [k2]: <span class="string">'k2'</span> &#125;;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertySymbols(o)); <span class="comment">// [Symbol(k1), Symbol(k2)]</span></span><br></pre></td></tr></table></figure>
 <h4 id="Property-Enumeration-Order-属性列举顺序"><a href="#Property-Enumeration-Order-属性列举顺序" target="_blank" rel="noopener" class="headerlink" title="Property Enumeration Order  属性列举顺序"></a>Property Enumeration Order  属性列举顺序</h4>for-in 循环，Object.keys() , Object.getOwnPropertyNames/Symbols() 和 Object.assign() 在属性枚举顺序上有重要区别。for-in循环和Object.keys() 没有确定的枚举顺序，这些顺序有JS引擎确定的，并且可能因为浏览器而异。<br>Object.getOwnPropertyNames()Object.getOwnPropertySymbols(), 和 Object.assign(), 确实具有确定枚举顺序。 数字键 将首先以升序顺序枚举，然后字符串和符号键以插入顺序枚举。在对象字面量汇总内联定义的键将以逗号分隔的顺序插入。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> k1 = <span class="built_in">Symbol</span>(<span class="string">'k1'</span>),    </span><br><span class="line">    k2 = <span class="built_in">Symbol</span>(<span class="string">'k2'</span>);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> o = &#123;  </span><br><span class="line">    <span class="number">1</span>: <span class="number">1</span>,  </span><br><span class="line">    first: <span class="string">'first'</span>,  </span><br><span class="line">    [k1]: <span class="string">'sym2'</span>,  </span><br><span class="line">    second: <span class="string">'second'</span>,  </span><br><span class="line">    <span class="number">0</span>: <span class="number">0</span> &#125;;</span><br><span class="line"> </span><br><span class="line">o[k2] = <span class="string">'sym2'</span>; </span><br><span class="line">o[<span class="number">3</span>] = <span class="number">3</span>; </span><br><span class="line">o.third = <span class="string">'third'</span>; </span><br><span class="line"><span class="number">0</span>[<span class="number">2</span>] = <span class="number">2</span>;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyNames(o));</span><br><span class="line"><span class="comment">// ["0", "1", "3", "first", "second", "third"]</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertySymbols(o)); </span><br><span class="line"><span class="comment">// [Symbol(k1), Symbol(k2)]</span></span><br></pre></td></tr></table></figure>
-<h3 id="Object-Iteration"><a href="#Object-Iteration" target="_blank" rel="noopener" class="headerlink" title="Object Iteration"></a>Object Iteration</h3>对于大多数JS 历史而言，迭代对象的属性都是一件麻烦事。ES2017 引入了两种静态方法，用于将对象的内容转换为有序的(更重要的是可迭代)格式。 这些静态方法， Object.values() 和Object.entries() 。接收和对象并且返回其中的内容。<h4 id="Alternate-Prototype-Syntax"><a href="#Alternate-Prototype-Syntax" target="_blank" rel="noopener" class="headerlink" title="Alternate Prototype Syntax"></a>Alternate Prototype Syntax</h4><h4 id="Dynamic-Nature-of-Prototypes"><a href="#Dynamic-Nature-of-Prototypes" target="_blank" rel="noopener" class="headerlink" title="Dynamic Nature of Prototypes"></a>Dynamic Nature of Prototypes</h4><h4 id="Native-Object-Prototypes"><a href="#Native-Object-Prototypes" target="_blank" rel="noopener" class="headerlink" title="Native Object Prototypes"></a>Native Object Prototypes</h4><h4 id="Problems-with-Prototypes"><a href="#Problems-with-Prototypes" target="_blank" rel="noopener" class="headerlink" title="Problems with Prototypes"></a>Problems with Prototypes</h4><h2 id="Inheritance"><a href="#Inheritance" target="_blank" rel="noopener" class="headerlink" title="Inheritance"></a>Inheritance</h2></li>
+<h3 id="Object-Iteration"><a href="#Object-Iteration" target="_blank" rel="noopener" class="headerlink" title="Object Iteration"></a>Object Iteration</h3>对于大多数JS 历史而言，迭代对象的属性都是一件麻烦事。ES2017 引入了两种静态方法，用于将对象的内容转换为有序的(更重要的是可迭代)格式。 这些静态方法， Object.values() 和Object.entries() 。接收和对象并且在数组中返回其中的内容。Object.values() 返回对象值的数组，而Object.entries() 返回数组对的数组，每个数组对代表对象中的[key,value] 对。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> o = &#123;  <span class="attr">foo</span>: <span class="string">'bar'</span>,  <span class="attr">baz</span>: <span class="number">1</span>,  <span class="attr">qux</span>: &#123;&#125; &#125;;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.values(o)); <span class="comment">// ["bar", 1, &#123;&#125;]</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.entries((o))); <span class="comment">// [["foo", "bar"], ["baz", 1], ["qux", &#123;&#125;]]</span></span><br></pre></td></tr></table></figure>
+请注意，非字符串属性在输出的数组中转换为字符串，此外，该方法执行对象的浅拷贝。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> o = &#123;  <span class="attr">qux</span>: &#123;&#125; &#125;;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.values(o)[<span class="number">0</span>] === o.qux); <span class="comment">// true</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.entries(o)[<span class="number">0</span>][<span class="number">1</span>] === o.qux); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+符号键属性将被忽略<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sym = <span class="built_in">Symbol</span>(); </span><br><span class="line"><span class="keyword">const</span> o = &#123;  [sym]: <span class="string">'foo'</span> &#125;;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.values(o)); <span class="comment">// []</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.entries((o))); <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
+<h4 id="Alternate-Prototype-Syntax-另外的原型语法"><a href="#Alternate-Prototype-Syntax-另外的原型语法" target="_blank" rel="noopener" class="headerlink" title="Alternate Prototype Syntax  另外的原型语法"></a>Alternate Prototype Syntax  另外的原型语法</h4>您可能已经在前面的实例主义到，必须为每个属性和方法键入Person.prototype 。 为了限制这种冗余并更好地从视觉上封装原型的功能，使用包含所有属性和方法对象常量 简单的覆盖 原型已经变得越来越普遍。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;           </span><br><span class="line">Person.prototype = &#123;  </span><br><span class="line">    name: <span class="string">"Nicholas"</span>,  </span><br><span class="line">    age: <span class="number">29</span>,  </span><br><span class="line">    job: <span class="string">"Software Engineer"</span>,  </span><br><span class="line">sayName() &#123;    </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);  &#125; &#125;;</span><br></pre></td></tr></table></figure>
+在这个重写的示例中. Person.prototype 属性设置为等于 使用对象字面量 创建的新对象。最终结果是相同的，但有一个例外，构造函数属性不在指向Person。 创建函数的时候，将创建其原型对象和自动分配构造函数。本质上，此语法会完全覆盖默认的原型对象，这意味着构造函数属性等于全新（对象构造函数）的属性，而不是函数本身。机关instanceOf运算符仍然可以可靠的运行，但是您不能依靠构造函数来指示对象的类型。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> friend = <span class="keyword">new</span> Person();</span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(friend <span class="keyword">instanceof</span> <span class="built_in">Object</span>);      <span class="comment">// true </span></span><br><span class="line"><span class="built_in">console</span>.log(friend <span class="keyword">instanceof</span> Person);      <span class="comment">// true </span></span><br><span class="line"><span class="built_in">console</span>.log(friend.constructor == Person);  <span class="comment">// false </span></span><br><span class="line"><span class="built_in">console</span>.log(friend.constructor == <span class="built_in">Object</span>);  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+在这里，instanceOf 对于Object 和 Person 仍然返回true。但是构造函数属性现在等于Object 而不是Person。 如果构造函数的值很重要，则可以将其专门设置回适当的值。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123; &#125;           </span><br><span class="line">Person.prototype = &#123;  </span><br><span class="line">    <span class="keyword">constructor</span>: Person,  </span><br><span class="line">    name: "Nicholas",  </span><br><span class="line">    age: 29,  </span><br><span class="line">    job: "Software Engineer",  </span><br><span class="line">    sayName() &#123;    </span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);  &#125; &#125;;</span><br></pre></td></tr></table></figure>
+该代码专门包含了一个构造函数属性，并将其设置为Person, 以确保该属性包含适当的值。<br>请记住 ，以这种方式还原构造函数会创建一个[[Enumerable]] 设置为true 的属性，默认情况下，本地构造函数属性不可枚举。因此如果您使用兼容的JS 引擎，则可能希望使用Object.defineProperty()<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;           </span><br><span class="line">Person.prototype = &#123;  </span><br><span class="line">    name: <span class="string">"Nicholas"</span>,  </span><br><span class="line">    age: <span class="number">29</span>,  </span><br><span class="line">    job: <span class="string">"Software Engineer"</span>,  </span><br><span class="line">    sayName() &#123;    </span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);  &#125; &#125;;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// restore the constructor Object.defineProperty</span></span><br><span class="line">(Person.prototype, <span class="string">"constructor"</span>, &#123;  </span><br><span class="line">    enumerable: <span class="literal">false</span>,  <span class="attr">value</span>: Person &#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="Dynamic-Nature-of-Prototypes-原型动态性"><a href="#Dynamic-Nature-of-Prototypes-原型动态性" target="_blank" rel="noopener" class="headerlink" title="Dynamic Nature of Prototypes 原型动态性"></a>Dynamic Nature of Prototypes 原型动态性</h4>因为在原型上查找值的过程是一种搜索，所以在任何时候对原型所做的更改都会立即反应在实例上，即使进行更改之前存在的实例也是如此。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> friend = <span class="keyword">new</span> Person();           Person.prototype.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"hi"</span>); &#125;;           </span><br><span class="line">friend.sayHi();  <span class="comment">// "hi" - works!</span></span><br></pre></td></tr></table></figure>
+以上代码先创建了一个Person的一个实例，并将其保存在person中，然后下一条语句在Person.prototype 中添加了一个方法sayHi()。 即使person 实例是在添加新方法之前创建的，但它仍然可以访问这个新方法。其原因可以归结为实例与原型之间的松散连接关系。当我们调用person.sayHi() 的时候，首先会在实例中搜索名为sayHi的属性，在没找到的情况下，会继续搜索原型。因为实例与原型之间的连接只不过是一个指针，而非一个副本，因此就可以在原型中找到新的sayHi 属性并保存在那里的函数。<br>尽管可以随时为原型添加属性和方法，并且修改能够立即在所有对象实例中反应出来，但如果重写整个原型对象，那么情况就不一样了。我们知道，调用构造函数的时候会为实例添加一个执行最初原型的[[Prototype]] 指针，而把原型修改为另外一个对象就等于切断了构造函数与最初原型之间的联系。请记住，实例中的指针仅仅指向原型，而不指向构造函数。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;           </span><br><span class="line"><span class="keyword">let</span> friend = <span class="keyword">new</span> Person();</span><br><span class="line">Person.prototype = &#123;  </span><br><span class="line">    <span class="keyword">constructor</span>: Person,  </span><br><span class="line">    name: "Nicholas",  </span><br><span class="line">    age: 29,  </span><br><span class="line">    job: "Software Engineer",  </span><br><span class="line">    sayName() &#123;    </span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);  &#125; &#125;; </span><br><span class="line">friend.sayName();   <span class="comment">// error</span></span><br></pre></td></tr></table></figure>
+在这个例子中我们先创建了一个Person 的一个实例，然后又重写了其原型对象。然后在嗲用friend.sayName() 的时候发生了错误，因为friend 指向的原型中不包含以该名字命名的属性<br>在构造函数上覆盖原型意味着实例引用新原型，而任何先前存在的对象实例仍然引用旧原型。<h4 id="Native-Object-Prototypes-原生对象的原型"><a href="#Native-Object-Prototypes-原生对象的原型" target="_blank" rel="noopener" class="headerlink" title="Native Object Prototypes 原生对象的原型"></a>Native Object Prototypes 原生对象的原型</h4>原型模式的重要性不仅体现在创建自定义类型方面，就连所有原生的引用类型，都是采用这种模式创建的。所有原生引用类型(Object,Array,String) 都在其构造函数的原型上定义了方法。例如在Array.prototype 中可以找到sort() 方法，而在String.prototype 中可以找到substring() 方法。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="built_in">Array</span>.prototype.sort);        <span class="comment">// "function" </span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="built_in">String</span>.prototype.substring);  <span class="comment">// "function"</span></span><br></pre></td></tr></table></figure>
+通过原生的对象，不仅可以取得所有默认方法的引用，而且也可以定义新方法。可以像修改自定义对象的原型一样修改原生对象的原型，因此可以随时添加方法。下面的代码就给基本包装类型String添加了一个名为startsWith()<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>.prototype.startsWith = <span class="function"><span class="keyword">function</span> (<span class="params">text</span>) </span>&#123; </span><br><span class="line">     <span class="keyword">return</span> <span class="keyword">this</span>.indexOf(text) === <span class="number">0</span>; &#125;;           </span><br><span class="line"><span class="keyword">let</span> msg = <span class="string">"Hello world!"</span>; </span><br><span class="line"><span class="built_in">console</span>.log(msg.startsWith(<span class="string">"Hello"</span>));   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+在这里新定义的startWith() 方法会在传入的文本位于一个字符串开始的时候返回true。 既然方法被添加给了String.prototype， 那么当前环境中的所有字符串都可以调用它。由于msg 是字符串，而且后台会调用String 基本包装函数创建这个字符串，因此通过msg就可以调用startsWith()方法。、<h4 id="Problems-with-Prototypes-原型对象的问题"><a href="#Problems-with-Prototypes-原型对象的问题" target="_blank" rel="noopener" class="headerlink" title="Problems with Prototypes 原型对象的问题"></a>Problems with Prototypes 原型对象的问题</h4>原型模式也不是没有缺点，首先它省略了为构造函数传递初始化参数这一环节，结果所有实例在默认情况下都将取得相同的属性值。虽然这会在某种程度上带来一些不方便，但还不是原型的最大问题。原型模式的最大问题是由其共享的本性所导致的。<br>原型中所有属性是被很多实例共享的，这种共享对于函数非常合适。对于那些包含基本值的属性倒也说得过去，毕竟（如前面的例子所示），通过在实例上添加一个同名属性，可以隐藏原型中的对应属性。然而，对于包含引用类型值的属性来说，问题就比较突出了。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;           </span><br><span class="line">Person.prototype = &#123;  </span><br><span class="line">    <span class="keyword">constructor</span>: Person,  </span><br><span class="line">    name: "Nicholas", </span><br><span class="line">    age: 29,  </span><br><span class="line">    job: "Software Engineer",  </span><br><span class="line">    friends: ["Shelby", "Court"],  </span><br><span class="line">    sayName() &#123;    </span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);  &#125; &#125;;           </span><br><span class="line"><span class="keyword">let</span> person1 = <span class="keyword">new</span> Person(); </span><br><span class="line"><span class="keyword">let</span> person2 = <span class="keyword">new</span> Person();           person1.friends.push(<span class="string">"Van"</span>);           </span><br><span class="line"><span class="built_in">console</span>.log(person1.friends);  <span class="comment">// "Shelby,Court,Van" </span></span><br><span class="line"><span class="built_in">console</span>.log(person2.friends);  <span class="comment">// "Shelby,Court,Van" </span></span><br><span class="line"><span class="built_in">console</span>.log(person1.friends === person2.friends);  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+在此，Person.prototype 对象有一个名为friends 的属性，该属性包含一个字符串数组，然后创建了Person 的两个实例，接着，修改了person1,friends 引用的数组，向数组中添加了一个字符串。由于friends 数组存在于Person.prototype 而非person1 中，所以刚刚提到的修改也会通过person2.friends 反应出来。加入我们的初衷就是像这样在所有实例中共享一个数组，那么对这个结果我没有话可说，可是实例一般都是要有属于自己的全部属性，而这个问题正是我们很少看到有人单独使用原型模式的原因所在。<h2 id="Inheritance-继承"><a href="#Inheritance-继承" target="_blank" rel="noopener" class="headerlink" title="Inheritance 继承"></a>Inheritance 继承</h2>许多OO语言都支持两种继承方式： 接口继承和实现继承。 接口继承只继承方法签名，而实现继承则继承实际的方法。如前所述，由于函数没有签名，所以JS 无法实现接口继承，JS 只支持实现继承，而且其实现继承主要依靠原型链来实现的<h3 id="Prototype-Chaining"><a href="#Prototype-Chaining" target="_blank" rel="noopener" class="headerlink" title="Prototype Chaining"></a>Prototype Chaining</h3>将原型链作为实现继承的主要方法。其基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法。</li>
 </ul>
 
           
@@ -894,7 +1025,7 @@ Object.assign() 有效地从每个源对象执行浅拷贝。如果多个源对�
               
                 <a href="/archives/" target="_blank" rel="noopener">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
