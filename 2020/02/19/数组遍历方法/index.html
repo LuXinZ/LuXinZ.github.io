@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="forEach、map、filter、find、sort、some等易错点整理常用的解析方法forEach基础点forEach的使用频率很高，多用于对数组自身的改变和个元素相关统计性的计算，重要特性如下：  可以改变数组自身，没有返回值 中途不能用常规操作跳出循环，可以用抛出异常（try&#x2F;catch）的方式，但不推荐这样做。易错点 forEach() 不一定改变自身数组，我们可以看看数组中的元素是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组遍历方法">
+<meta property="og:url" content="2020/02/19/%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="forEach、map、filter、find、sort、some等易错点整理常用的解析方法forEach基础点forEach的使用频率很高，多用于对数组自身的改变和个元素相关统计性的计算，重要特性如下：  可以改变数组自身，没有返回值 中途不能用常规操作跳出循环，可以用抛出异常（try&#x2F;catch）的方式，但不推荐这样做。易错点 forEach() 不一定改变自身数组，我们可以看看数组中的元素是">
+<meta property="og:locale" content="zh">
+<meta property="article:published_time" content="2020-02-19T07:55:33.605Z">
+<meta property="article:modified_time" content="2020-02-19T09:50:03.151Z">
+<meta property="article:author" content="Luxin Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="LuXinZ.github.io/2020/02/19/数组遍历方法/"/>
+
+
+
+
+
+  <title>数组遍历方法 | 个人博客</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" target="_blank"  class="brand" rel="start noopener">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">每日笔记</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" target="_blank" rel="section noopener">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" target="_blank" rel="section noopener">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="LuXinZ.github.io2020/02/19/数组遍历方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luxin Z">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数组遍历方法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-19T15:55:33+08:00">
+                2020-02-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="forEach、map、filter、find、sort、some等易错点整理"><a href="#forEach、map、filter、find、sort、some等易错点整理" target="_blank" rel="noopener" class="headerlink" title="forEach、map、filter、find、sort、some等易错点整理"></a>forEach、map、filter、find、sort、some等易错点整理</h1><h2 id="常用的解析方法"><a href="#常用的解析方法" target="_blank" rel="noopener" class="headerlink" title="常用的解析方法"></a>常用的解析方法</h2><h3 id="forEach"><a href="#forEach" target="_blank" rel="noopener" class="headerlink" title="forEach"></a>forEach</h3><h4 id="基础点"><a href="#基础点" target="_blank" rel="noopener" class="headerlink" title="基础点"></a>基础点</h4><p>forEach的使用频率很高，多用于对数组自身的改变和个元素相关统计性的计算，重要特性如下：</p>
+<ul>
+<li>可以改变数组自身，没有返回值</li>
+<li>中途不能用常规操作跳出循环，可以用抛出异常（try/catch）的方式，但不推荐这样做。<h4 id="易错点"><a href="#易错点" target="_blank" rel="noopener" class="headerlink" title="易错点"></a>易错点</h4></li>
+<li>forEach() 不一定改变自身数组，我们可以看看数组中的元素是值类型和引用类型场景下，是否都能获得改变<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = [</span><br><span class="line">   &#123;<span class="attr">name</span>:<span class="string">'鸣人'</span>,<span class="attr">age</span>:<span class="number">16</span>&#125;,</span><br><span class="line">   &#123;<span class="attr">name</span>:<span class="string">'佐助'</span>,<span class="attr">age</span>:<span class="number">17</span>&#125;</span><br><span class="line">];</span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line">arr1.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123; </span><br><span class="line">  item.age = item.age + <span class="number">1</span>&#125;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">//=&gt; [&#123;name:'鸣人',age:17&#125;,&#123;name:'佐助',age:18&#125;]</span></span><br><span class="line"></span><br><span class="line">arr2.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">  item = item * <span class="number">2</span>&#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// =&gt; [1,2,3]</span></span><br></pre></td></tr></table></figure>
+最后的结果是，arr1发生了改变，鸣人和佐助都长了一岁，arr2没有任何改变，所以可以的出结论，当数组中元素时值类型，forEach绝对不会改变数组；当时引用类型，则可以改变数组</li>
+<li>不迟滞链式操作，所以一下代码是错误的<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].forEach(</span><br><span class="line">   item =&gt; <span class="built_in">console</span>.log(item)</span><br><span class="line">).filter(<span class="function"><span class="params">item</span> =&gt;</span> &#123; </span><br><span class="line">   <span class="keyword">return</span> item &gt; <span class="number">2</span> </span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// Uncaught TypeError: Cannot read property 'filter' of undefined</span></span><br></pre></td></tr></table></figure>
+注意这里仅仅说forEach()这个方法不支持链式调用，在调用forEach之前，前面的数组怎么链式都没问题，最后返回一个正常数组即可<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这个没问题</span></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].filter(<span class="function"><span class="params">item</span> =&gt;</span> &#123; </span><br><span class="line">  <span class="keyword">return</span> item &gt; <span class="number">2</span> </span><br><span class="line">&#125;).forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">   <span class="built_in">console</span>.log(item) </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+<li>不会在迭代之前创建数组的副本，忽略。<h3 id="map"><a href="#map" target="_blank" rel="noopener" class="headerlink" title="map"></a>map</h3>map() 功能很强大，forEach() 的一些局限性他都能解决，map即映射，也就是原数组被映射到对应新数组<h4 id="基础点-1"><a href="#基础点-1" target="_blank" rel="noopener" class="headerlink" title="基础点"></a>基础点</h4></li>
+<li>新建一个数组，需要有承载对象，也意味着原始数组在调用它后不会发生变化；</li>
+<li>该数组中的每个元素 都调用一个提供的函数后返回结果<h4 id="易错点-1"><a href="#易错点-1" target="_blank" rel="noopener" class="headerlink" title="易错点"></a>易错点</h4></li>
+<li>创建新数组不代表不能用它改变原有数组，你用原有数组去承载就可以了<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">arr = arr.map(<span class="function"><span class="params">item</span> =&gt;</span> &#123; <span class="keyword">return</span> item * <span class="number">2</span> &#125;)</span><br></pre></td></tr></table></figure></li>
+<li>map() 中每个元素都要执行相应的回调函数，所以必须要有return。如果你想给数组做一定的过滤处理，那map()基本上行不通<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> newArr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].map(<span class="function"><span class="params">item</span> =&gt;</span> &#123; <span class="keyword">if</span>(item &gt; <span class="number">3</span>) <span class="keyword">return</span> item &#125;)</span><br><span class="line"><span class="comment">// =&gt; [undefined, undefined, undefined, 4, 5]</span></span><br></pre></td></tr></table></figure>
+<h3 id="filter"><a href="#filter" target="_blank" rel="noopener" class="headerlink" title="filter"></a>filter</h3>map() 没办法做到的过滤就交给filter()去完成，也是创建一个新数组，新数组中的元素时筛选出来的符合条件的所有对象<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> newArr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].filter(<span class="function"><span class="params">item</span> =&gt;</span>&#123;</span><br><span class="line">   <span class="keyword">if</span>(item &gt; <span class="number">3</span>) <span class="keyword">return</span> item </span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//  =&gt; [4,5]</span></span><br></pre></td></tr></table></figure>
+<h3 id="sort"><a href="#sort" target="_blank" rel="noopener" class="headerlink" title="sort"></a>sort</h3>sort() 用于对数组的元素进行排序，排序顺序可以是字母或数字，并按照升序或降序<h4 id="基础点-2"><a href="#基础点-2" target="_blank" rel="noopener" class="headerlink" title="基础点"></a>基础点</h4><h5 id="默认排序按字母升序"><a href="#默认排序按字母升序" target="_blank" rel="noopener" class="headerlink" title="默认排序按字母升序"></a>默认排序按字母升序</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">5</span>].sort()</span><br><span class="line"><span class="comment">// =&gt; [1,2,3,4,5]</span></span><br><span class="line"></span><br><span class="line">[<span class="string">'Javascript'</span>,<span class="string">'Vue'</span>,<span class="string">'React'</span>,<span class="string">'Node'</span>,<span class="string">'Webpack'</span>].sort();</span><br><span class="line"><span class="comment">// =&gt; ["Javascript", "Node", "React", "Vue", "Webpack"]</span></span><br></pre></td></tr></table></figure>
+<h4 id="易错点-2"><a href="#易错点-2" target="_blank" rel="noopener" class="headerlink" title="易错点"></a>易错点</h4></li>
+<li>sort() 与map(),filter()不同，它直接改变原始数据</li>
+<li>如果想要按照其他标准进行排序，就需要提供比较函数compareFunction(a,b), 数组会按照调用该函数的返回值排序，即a和b是两个将要比较的元素<ul>
+<li>如果compareFunction(a,b) 小于0，则a排列到b之前</li>
+<li>如果compareFunction(a,b) 等于0，则a和b的相对位置不变</li>
+<li>如果compareFunction(a,b) 大于0，则b排列到a之前<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> Users = [</span><br><span class="line">  &#123;<span class="attr">name</span>:<span class="string">'鸣人'</span>,<span class="attr">age</span>:<span class="number">16</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">name</span>:<span class="string">'卡卡西'</span>,<span class="attr">age</span>:<span class="number">28</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">name</span>:<span class="string">'自来也'</span>,<span class="attr">age</span>:<span class="number">50</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">name</span>:<span class="string">'佐助'</span>,<span class="attr">age</span>:<span class="number">17</span>&#125;</span><br><span class="line">];</span><br><span class="line">Users.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span> &#123;</span><br><span class="line">   <span class="keyword">return</span> a.age - b.age</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// =&gt; 鸣人、佐助、卡卡西、自来也</span></span><br></pre></td></tr></table></figure>
+<h3 id="some"><a href="#some" target="_blank" rel="noopener" class="headerlink" title="some()"></a>some()</h3>some() 也是很好的一个方法，用于检查数组中是否有某些符合条件<h4 id="基础点-3"><a href="#基础点-3" target="_blank" rel="noopener" class="headerlink" title="基础点"></a>基础点</h4></li>
+</ul>
+</li>
+<li>只要有一个满足即返回true，之后的不在执行<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result = [</span><br><span class="line">   &#123;<span class="attr">name</span>:<span class="string">'鸣人'</span>,<span class="attr">age</span>:<span class="number">16</span>&#125;,</span><br><span class="line">   &#123;<span class="attr">name</span>:<span class="string">'佐助'</span>,<span class="attr">age</span>:<span class="number">17</span>&#125;</span><br><span class="line">].some(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> item.age &gt; <span class="number">16</span> </span><br><span class="line">&#125;);</span><br><span class="line">=&gt; <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h4 id="易错点-3"><a href="#易错点-3" target="_blank" rel="noopener" class="headerlink" title="易错点"></a>易错点</h4>some () 和 every() 返回都是Boolean值，仅此而已<h3 id="every"><a href="#every" target="_blank" rel="noopener" class="headerlink" title="every()"></a>every()</h3>如果说some() 是 || 判断，那every() 就是 &amp;&amp; 判断，它用于检测数组中的每一项是否都满足条件，只有都满足了才会返回true，<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result = [</span><br><span class="line">   &#123;<span class="attr">name</span>:<span class="string">'鸣人'</span>,<span class="attr">age</span>:<span class="number">16</span>&#125;,</span><br><span class="line">   &#123;<span class="attr">name</span>:<span class="string">'佐助'</span>,<span class="attr">age</span>:<span class="number">17</span>&#125;</span><br><span class="line">].every(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> item.age &gt; <span class="number">16</span> </span><br><span class="line">&#125;);</span><br><span class="line">=&gt; <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h1 id="其他景点方法"><a href="#其他景点方法" target="_blank" rel="noopener" class="headerlink" title="其他景点方法"></a>其他景点方法</h1><h2 id="数字去重"><a href="#数字去重" target="_blank" rel="noopener" class="headerlink" title="数字去重"></a>数字去重</h2><h3 id="new-Set-的局限性"><a href="#new-Set-的局限性" target="_blank" rel="noopener" class="headerlink" title="new Set() 的局限性"></a>new Set() 的局限性</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> tempArr = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line"><span class="comment">// =&gt; &#123;1,2,3,4,5&#125; </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//并且已有元素是添加不进去的：</span></span><br><span class="line">tempArr.add(<span class="number">3</span>) </span><br><span class="line"><span class="comment">// =&gt; &#123;1,2,3,4,5&#125;</span></span><br><span class="line"></span><br><span class="line">tempArr.add(<span class="number">6</span>)</span><br><span class="line"><span class="comment">// =&gt; &#123;1,2,3,4,5,6&#125;</span></span><br></pre></td></tr></table></figure>
+一定注意newSet() 会将结果转换成对象，但实际工作中我们很少会和元素是值类型的数组打交道，那看看元素是引用类型还行不行<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> mySet = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line">mySet.add(<span class="number">1</span>); <span class="comment">// Set(1) &#123;1&#125;</span></span><br><span class="line">mySet.add(<span class="number">5</span>); <span class="comment">// Set(2) &#123;1, 5&#125;</span></span><br><span class="line">mySet.add(<span class="number">5</span>); <span class="comment">// Set(2) &#123;1, 5&#125; 这里体现了值的唯一性</span></span><br><span class="line">mySet.add(<span class="string">'some text'</span>); </span><br><span class="line">[...mySet]</span><br><span class="line"><span class="comment">// =&gt; [1,5,'some text']</span></span><br><span class="line"></span><br><span class="line">mySet.add(&#123;<span class="attr">name</span>:<span class="string">'jay Chou'</span>,<span class="attr">age</span>:<span class="number">40</span>&#125;);</span><br><span class="line">mySet.add(&#123;<span class="attr">name</span>:<span class="string">'jay Chou'</span>,<span class="attr">age</span>:<span class="number">40</span>&#125;);</span><br><span class="line"></span><br><span class="line">[...mySet]</span><br><span class="line"><span class="comment">// =&gt; [1,5,'some text',&#123;name:'jay Chou',age:40&#125;,&#123;name:'jay Chou',age:40&#125;]</span></span><br></pre></td></tr></table></figure>
+set()没发去重元素是引用对象的数组。<h3 id="uniqWith"><a href="#uniqWith" target="_blank" rel="noopener" class="headerlink" title="_.uniqWith()"></a>_.uniqWith()</h3>Lodash 是一个一致性，模块化，高性能的JS 实用工具库，它提供了一个方法 _.uniqWith()<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> _ <span class="keyword">from</span> <span class="string">'lodash'</span>;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">var</span> objects = [&#123; <span class="string">'x'</span>: <span class="number">1</span>, <span class="string">'y'</span>: <span class="number">2</span> &#125;, &#123; <span class="string">'x'</span>: <span class="number">2</span>, <span class="string">'y'</span>: <span class="number">1</span> &#125;, &#123; <span class="string">'x'</span>: <span class="number">1</span>, <span class="string">'y'</span>: <span class="number">2</span> &#125;];</span><br><span class="line">_.uniqWith(objects, _.isEqual);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/=&gt; [&#123; 'x': 1, 'y': 2 &#125;, &#123; 'x': 2, 'y': 1 &#125;]</span></span><br></pre></td></tr></table></figure>
+其中 _.isEqual(value,other) 用于执行深比较来确定两者的值是否相等， _.uniqWith() 做去重处理<h2 id="获取数组中的指定元素"><a href="#获取数组中的指定元素" target="_blank" rel="noopener" class="headerlink" title="获取数组中的指定元素"></a>获取数组中的指定元素</h2>出于性能的考虑，不用filter() 从头遍历到尾<h3 id="findIndex"><a href="#findIndex" target="_blank" rel="noopener" class="headerlink" title="findIndex()"></a>findIndex()</h3>既然filter() 不支持中断遍历，那我们就要找一个能中断遍历的方法，我们可以使用for…of ，该方法支持中断遍历，但是该方法代码量较大，不建议使用。 我们可以使用findIndex() 帮我们先获取到所需元素的索引值，拿到索引值后。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> testArr = [&#123;<span class="attr">name</span>:<span class="string">'鸣人'</span>,<span class="attr">age</span>:<span class="number">16</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'佐助'</span>,<span class="attr">age</span>:<span class="number">17</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'卡卡西'</span>,<span class="attr">age</span>:<span class="number">26</span>&#125;]</span><br><span class="line"><span class="keyword">let</span> index = testArr.findIndex(<span class="function"><span class="params">item</span> =&gt;</span> &#123; <span class="keyword">return</span> item.age &gt; <span class="number">16</span> &#125;);</span><br><span class="line"><span class="comment">// =&gt; 1</span></span><br></pre></td></tr></table></figure>
+或者也可以使用Loadsh提供的_.findIndex() ，通过对象属性值直接获取对应索引。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> testArr = [&#123;<span class="attr">name</span>:<span class="string">'鸣人'</span>,<span class="attr">age</span>:<span class="number">16</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'佐助'</span>,<span class="attr">age</span>:<span class="number">17</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'卡卡西'</span>,<span class="attr">age</span>:<span class="number">26</span>&#125;]</span><br><span class="line"><span class="keyword">let</span> index = _.findIndex(testArr, &#123;<span class="attr">name</span>:<span class="string">'佐助'</span>&#125;);</span><br><span class="line"><span class="comment">// =&gt; 1</span></span><br></pre></td></tr></table></figure>
+<h3 id="find"><a href="#find" target="_blank" rel="noopener" class="headerlink" title="find()"></a>find()</h3>find() 顾名思义，就是用来在数组中找到我们所需要的元素，并且和some() 一样，只要有一个满足即返回该元素，不会多于遍历，对性能很友善<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> testArr = [&#123;<span class="attr">name</span>:<span class="string">'鸣人'</span>,<span class="attr">age</span>:<span class="number">16</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'佐助'</span>,<span class="attr">age</span>:<span class="number">17</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'卡卡西'</span>,<span class="attr">age</span>:<span class="number">27</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'佐助'</span>,<span class="attr">age</span>:<span class="number">17</span>&#125;]</span><br><span class="line"><span class="keyword">let</span> result = testArr.find(<span class="function"><span class="params">item</span> =&gt;</span> &#123; <span class="keyword">return</span> item.name == <span class="string">'佐助'</span>&#125;);</span><br><span class="line"><span class="comment">// =&gt; &#123; name:'佐助',age:17 &#125;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="2020/02/19/数组16种常用方法/" target="_blank" rel="next noopener" title="数组16种常用方法">
+                <i class="fa fa-chevron-left"></i> 数组16种常用方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Luxin Z</p>
+              <p class="site-description motion-element" itemprop="description">用于分享读书笔记</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/" target="_blank" rel="noopener">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#forEach、map、filter、find、sort、some等易错点整理" target="_blank" rel="noopener"><span class="nav-number">1.</span> <span class="nav-text">forEach、map、filter、find、sort、some等易错点整理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的解析方法" target="_blank" rel="noopener"><span class="nav-number">1.1.</span> <span class="nav-text">常用的解析方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#forEach" target="_blank" rel="noopener"><span class="nav-number">1.1.1.</span> <span class="nav-text">forEach</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础点" target="_blank" rel="noopener"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">基础点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#易错点" target="_blank" rel="noopener"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">易错点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map" target="_blank" rel="noopener"><span class="nav-number">1.1.2.</span> <span class="nav-text">map</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础点-1" target="_blank" rel="noopener"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">基础点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#易错点-1" target="_blank" rel="noopener"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">易错点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter" target="_blank" rel="noopener"><span class="nav-number">1.1.3.</span> <span class="nav-text">filter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sort" target="_blank" rel="noopener"><span class="nav-number">1.1.4.</span> <span class="nav-text">sort</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础点-2" target="_blank" rel="noopener"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">基础点</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#默认排序按字母升序" target="_blank" rel="noopener"><span class="nav-number">1.1.4.1.1.</span> <span class="nav-text">默认排序按字母升序</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#易错点-2" target="_blank" rel="noopener"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">易错点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#some" target="_blank" rel="noopener"><span class="nav-number">1.1.5.</span> <span class="nav-text">some()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础点-3" target="_blank" rel="noopener"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">基础点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#易错点-3" target="_blank" rel="noopener"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">易错点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#every" target="_blank" rel="noopener"><span class="nav-number">1.1.6.</span> <span class="nav-text">every()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他景点方法" target="_blank" rel="noopener"><span class="nav-number">2.</span> <span class="nav-text">其他景点方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数字去重" target="_blank" rel="noopener"><span class="nav-number">2.1.</span> <span class="nav-text">数字去重</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#new-Set-的局限性" target="_blank" rel="noopener"><span class="nav-number">2.1.1.</span> <span class="nav-text">new Set() 的局限性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#uniqWith" target="_blank" rel="noopener"><span class="nav-number">2.1.2.</span> <span class="nav-text">_.uniqWith()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取数组中的指定元素" target="_blank" rel="noopener"><span class="nav-number">2.2.</span> <span class="nav-text">获取数组中的指定元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#findIndex" target="_blank" rel="noopener"><span class="nav-number">2.2.1.</span> <span class="nav-text">findIndex()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find" target="_blank" rel="noopener"><span class="nav-number">2.2.2.</span> <span class="nav-text">find()</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Luxin Z</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
