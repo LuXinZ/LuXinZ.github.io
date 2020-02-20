@@ -231,6 +231,333 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="LuXinZ.github.io2020/02/20/数据结构2数组结构/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luxin Z">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="2020/02/20/数据结构2数组结构/" target="_blank" rel="noopener" itemprop="url">数据结构2数组结构</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-20T17:08:15+08:00">
+                2020-02-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="数组的基本使用"><a href="#数组的基本使用" target="_blank" rel="noopener" class="headerlink" title="数组的基本使用"></a>数组的基本使用</h1><h2 id="创建和初始化数组"><a href="#创建和初始化数组" target="_blank" rel="noopener" class="headerlink" title="创建和初始化数组"></a>创建和初始化数组</h2><p>用JS 声明，创建和初始化数组很简单</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建和初始化数组</span></span><br><span class="line"><span class="keyword">let</span> daysOfWeek = <span class="keyword">new</span> <span class="built_in">Array</span>()</span><br><span class="line"><span class="keyword">let</span> daysOfWeek = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">7</span>)</span><br><span class="line"><span class="keyword">let</span> daysOfWeek = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">'Sunday'</span>, <span class="string">'Monday'</span>, <span class="string">'Tuesday'</span>, <span class="string">'Wednesday'</span>,</span><br><span class="line">    <span class="string">'Thursday'</span>, <span class="string">'Friday'</span>, <span class="string">'Saturday'</span>)</span><br></pre></td></tr></table></figure>
+<p>代码解析：<br>使用new 关键字，就能简单的声明并初始化一个数组<br>用这种方式，还可以创建一个指定长度的数组<br>另外，也可以直接将数组元素作为参数传递给它的构造器。<br>用new 创建数组并不是最好的方式，如果想在JS 创建一个数组，只用中括号 [] 的形式就可以了<br>使用中括号[]  创建数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> daysOfWeek = [<span class="string">'Sunday'</span>, <span class="string">'Monday'</span>, <span class="string">'Tuesday'</span>, <span class="string">'Wednesday'</span>,</span><br><span class="line">    <span class="string">'Thursday'</span>, <span class="string">'Friday'</span>, <span class="string">'Saturday'</span>]</span><br></pre></td></tr></table></figure>
+<h2 id="数组长度和遍历数组"><a href="#数组长度和遍历数组" target="_blank" rel="noopener" class="headerlink" title="数组长度和遍历数组"></a>数组长度和遍历数组</h2><p>如果我们希望获取数组的长度，有一个length 属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取数组的长度</span></span><br><span class="line">alert(daysOfWeek.length)</span><br></pre></td></tr></table></figure>
+<p>也可以通过下标值来遍历数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 普通for方式遍历数组</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i =<span class="number">0</span>;i &lt; daysOfWeek.length;i++)&#123;</span><br><span class="line">    alert (daysOfWeek[i])</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 通过foreach 遍历数组</span></span><br><span class="line">daysWeek.foreach(<span class="function"><span class="keyword">function</span> (<span class="params">value</span>)</span>&#123;</span><br><span class="line">    alert(value)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>求斐波那契数列的前20 个数组，并且放在数组中<br>菲波那切数列第一个数组是1 ，第二个数字也是1 ，第三项是前两项的和。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> shuzu = [<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">2</span>; i&lt;<span class="number">20</span>;i++ )&#123;</span><br><span class="line">    shuzu[i] = shuzu[i<span class="number">-1</span>] + shuzu[i<span class="number">-2</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(shuzu)</span><br></pre></td></tr></table></figure>
+<h1 id="数组的常见操作"><a href="#数组的常见操作" target="_blank" rel="noopener" class="headerlink" title="数组的常见操作"></a>数组的常见操作</h1><h2 id="添加元素"><a href="#添加元素" target="_blank" rel="noopener" class="headerlink" title="添加元素"></a>添加元素</h2><p>假如我们有一个数组 numbers, 初始化为0-9</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化一个数组</span></span><br><span class="line"><span class="keyword">let</span> numbers = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br></pre></td></tr></table></figure>
+<p>添加一个元素到数组的最后位置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方式1 </span></span><br><span class="line">numbers[numbers.length] = <span class="number">10</span></span><br><span class="line"><span class="comment">// 方式2 </span></span><br><span class="line">numbers.push(<span class="number">11</span>)</span><br><span class="line">numbers.push(<span class="number">12</span>,<span class="number">13</span>)</span><br></pre></td></tr></table></figure>
+<p>在数组首位插入一个元素</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = numbers.length;i&gt;<span class="number">0</span>; i--)&#123;</span><br><span class="line">    numbers[i] = numbers[i<span class="number">-1</span>]</span><br><span class="line">&#125;</span><br><span class="line">numbers[<span class="number">2</span>] = <span class="number">-1</span></span><br><span class="line"><span class="built_in">console</span>.log(numbers)</span><br></pre></td></tr></table></figure>
+<p>考虑上面的代码实现的性能怎么样呢<br>    性能并不算非常高，<br>    这也是数组和链表（在中间位置插入元素的效率比链表低）<br>当然我们在数组首位插入数据可以直接使用unshift 方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过unshift 在首位插入数据</span></span><br><span class="line">number.unshift(<span class="number">-2</span>)</span><br><span class="line">number.unshift(<span class="number">-4</span>,<span class="number">-3</span>)</span><br><span class="line">alert(numbers) <span class="comment">// -4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13</span></span><br></pre></td></tr></table></figure>
+<h2 id="删除元素"><a href="#删除元素" target="_blank" rel="noopener" class="headerlink" title="删除元素"></a>删除元素</h2><p>如果希望删除数组最后的元素，可以使用pop()方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 删除最后的元素</span></span><br><span class="line">number.pop()</span><br><span class="line">alert(numbers)<span class="comment">// -4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12</span></span><br></pre></td></tr></table></figure>
+<p>如果我们希望移除首位的元素，自己实现代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt;numbers.length; i++)&#123;</span><br><span class="line">    numbers[i] = numbers[i+<span class="number">1</span>]</span><br><span class="line">&#125;</span><br><span class="line">number.pop()</span><br><span class="line"><span class="built_in">console</span>.log(numbers)</span><br></pre></td></tr></table></figure>
+<h2 id="任意位置"><a href="#任意位置" target="_blank" rel="noopener" class="headerlink" title="任意位置"></a>任意位置</h2><p>前面主要是在数组的开头和结尾处添加和删除数据<br>通过splice 删除数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 删除指定位置的几个元素</span></span><br><span class="line">numbers.splice(<span class="number">5</span>,<span class="number">3</span>)</span><br><span class="line">alert(numbers) <span class="comment">// -4,-3,-2,-1,0,4,5,6,7,8,9,10,11,12,13</span></span><br></pre></td></tr></table></figure>
+<p>上面的代码会删除索引为 5，6, 7 位置的元素<br>第一个参数表示索引起始的位置为5 （其实是第六个元素，因为索引从0开始），删除3个元素<br>如果我们希望使用splice 来插入数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 插入指定位置元素</span></span><br><span class="line">numbers.splice(<span class="number">5</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line">alert(numbers) <span class="comment">// -4,-3,-2,-1,0,3,2,1,4,5,6,7,8,9,10,11,12,13</span></span><br></pre></td></tr></table></figure>
+<p>上面的代码会从索引为5 的位置开始插入数据，其他数据依次向后位移。<br>第一个参数依然是索引值为5（第六个位置）<br>第二个参数为0的时候表示不是删除数据，而是插入数据<br>后面今个的是在这个位置要插入的数据，可以是其他类型的。<br>如果我们希望使用splice 来修改数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 修改指定位置的元素</span></span><br><span class="line">numbers.splice(<span class="number">5</span>,<span class="number">3</span>,<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>)</span><br><span class="line">alert(numbers) <span class="comment">// -4,-3,-2,-1,0,a,b,c,4,5,6,7,8,9,10,11,12,13</span></span><br></pre></td></tr></table></figure>
+<p>上面的代码会从索引5的卫视开始修改数据，修改多少个呢，第二个参数来确定的。<br>第一个参数依然是索引的位置为5<br>第二个参数是要将数组中多少个元素给替换掉，这里是3个，也可是2个<br>后面跟着的就是要替换的元素</p>
+<h1 id="数组的其他操作"><a href="#数组的其他操作" target="_blank" rel="noopener" class="headerlink" title="数组的其他操作"></a>数组的其他操作</h1><h2 id="常见方法"><a href="#常见方法" target="_blank" rel="noopener" class="headerlink" title="常见方法"></a>常见方法</h2><p>concat 连接2个或者更多数组，并返回结果<br>every 对数组中的每一项运行给定函数，如果该函数的每一项都返回true，则返回true，否则返回false<br>filter 对数组中的每一项运行给定函数，返回该函数会返回true的项组成的数组<br>forEach 对数组中每一项运行给定函数，这个方法没有返回值<br>join 将所有数组元素连接成一个字符串<br>indexOf 返回第一个与给定参数相等的数组元素的索引，没有找到则返回-1<br>lastIndexOf 返回在数组中搜索到的与给定参数相等的元素的索引里最大值<br>map 对数组的每一项运行给定函数，返回每次函数调用的结果组成的数组<br>reverse 颠倒数组中元素的顺序，原先第一个元素现在变成最后一个，同样原先的最后一个元素变成了现在的第一个<br>slice 传入索引值，将数组里对应索引范围内的元素作为新数组返回<br>some 对数组中的每一项运行给定函数，如果任一项返回true， 则结果为true。 并且迭代结束<br>sort 按照字母顺序对数组排序，支持传入指定排序方法的函数作为参数<br>toString  将数组作为字符串返回<br>valueOf 和toString 类似，将数组作为字符串返回。</p>
+<h2 id="数组合并"><a href="#数组合并" target="_blank" rel="noopener" class="headerlink" title="数组合并"></a>数组合并</h2><p>数组的合并非常简单，使用concat 即可</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数组的合并</span></span><br><span class="line"><span class="keyword">var</span> nums1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> nums2 = [<span class="number">100</span>,<span class="number">200</span>,<span class="number">300</span>]</span><br><span class="line"><span class="keyword">var</span> newNums = nums1.concat(num2)</span><br><span class="line">alert(newNums) <span class="comment">// 1,2,3,100,200,300</span></span><br><span class="line"></span><br><span class="line">numNums = nums1 + nums2 </span><br><span class="line">alert(newNums) <span class="comment">// 1,2,3,100,200,300</span></span><br></pre></td></tr></table></figure>
+<h2 id="迭代方法"><a href="#迭代方法" target="_blank" rel="noopener" class="headerlink" title="迭代方法"></a>迭代方法</h2><p>every() 方法<br>    every() 方法是将数组中每一个元素传入到一个函数中，该函数返回true/ false<br>    如果函数中每一个元素返回true, 那么结果为true ，有一个为false， 那么结果为false<br>every() 练习<br>判断一组元素中是否都包含某个字符串</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义数组</span></span><br><span class="line"><span class="keyword">var</span> names = [<span class="string">'abc'</span>,<span class="string">'cb'</span>,<span class="string">'mba'</span>,<span class="string">'dna'</span>]</span><br><span class="line"><span class="comment">// 判断数组的元素是否都包含a字符</span></span><br><span class="line"><span class="keyword">var</span> flag = names.every(<span class="function"><span class="keyword">function</span>(<span class="params">t</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> t.indexOf(<span class="string">'a'</span>) != <span class="number">-1</span></span><br><span class="line">&#125;)</span><br><span class="line">alert(flag)</span><br></pre></td></tr></table></figure>
+<p>some() 方法<br>    some()方法是将数组中每一个元素传入到一个函数中，该函数返回true/false<br>    但是和every 不同的是，一旦有一次函数返回了true, 那么迭代就会结束，并且结果返回true</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义数组</span></span><br><span class="line"><span class="keyword">var</span> names = [<span class="string">'abc'</span>,<span class="string">'cb'</span>,<span class="string">'mba'</span>,<span class="string">'dna'</span>]</span><br><span class="line"><span class="comment">// 判断数组中是否包含有a字符的字符</span></span><br><span class="line"><span class="keyword">var</span> flag = names.some(<span class="function"><span class="keyword">function</span>(<span class="params">t</span>)</span>&#123;</span><br><span class="line">    alert(t)</span><br><span class="line">    <span class="keyword">return</span> t.indexOf(<span class="string">'a'</span>) !== <span class="number">-1</span></span><br><span class="line">&#125;)</span><br><span class="line">alert(flag)</span><br></pre></td></tr></table></figure>
+<p>forEach() 方法<br>    froEach() 方法仅仅是一种快速迭代数组的方式而已<br>    该方法不需要返回值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> names = [<span class="string">'abc'</span>,<span class="string">'cb'</span>,<span class="string">'mba'</span>,<span class="string">'dna'</span>]</span><br><span class="line"><span class="comment">// forEach 的使用</span></span><br><span class="line">names.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">t</span>)</span>&#123;</span><br><span class="line">    alert(t)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>filter() 方法<br>    filter()方法是一种过滤的函数<br>    首先会遍历数组中每一个元素传入到函数中<br>    函数的结果返回true，俺么这个元素会被添加到最新的数组中，返回false， 则忽略该元素<br>    最终会形成一个 新的数组，该数组就是filter() 方法的返回值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义数组</span></span><br><span class="line"><span class="keyword">var</span> names = [<span class="string">"abc"</span>, <span class="string">"cb"</span>, <span class="string">"mba"</span>, <span class="string">"dna"</span>]</span><br><span class="line"><span class="comment">// 获取names 中所有包含a 字符的元素、</span></span><br><span class="line"><span class="keyword">var</span> newNames= names.filter(<span class="function"><span class="keyword">function</span>(<span class="params">t</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> t.indexOf(<span class="string">'a'</span>) !== <span class="number">-1</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(newNames)</span><br></pre></td></tr></table></figure>
+<p>map() 方法<br>    map方法提供的是一种映射函数<br>    首先会遍历数组中每一个元素传入到函数中<br>    元素会经过函数中的指令进行各种变换，生成新的元素，并且将新的元素返回<br>    最终会将返回的所有元素形成一个新的数组，</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义数组</span></span><br><span class="line"><span class="keyword">var</span> names = [<span class="string">"abc"</span>, <span class="string">"cb"</span>, <span class="string">"mba"</span>, <span class="string">"dna"</span>]</span><br><span class="line"><span class="comment">// 在names 中所有的元素后面拼接-abc</span></span><br><span class="line"><span class="keyword">var</span> newNames = names.map(<span class="function"><span class="keyword">function</span>(<span class="params">t</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> t + <span class="string">'-abc'</span></span><br><span class="line">&#125;)</span><br><span class="line">alert(newNames)</span><br></pre></td></tr></table></figure>
+<p>reduce 方法<br>首先，这个方法需要的参数<br>arr.reduce(callback[,initialValue])<br>参数：<br>    callback(一个在数组中每一项上调用的函数，接受四个函数)<br>    previousValue(上一次调用回调函数的时候的返回值，或者初始值)<br>    currentValue( 当前正在处理的数组元素)<br>    currentValue(当前正在处理的数组元素)<br>    array(调用reduce()方法的数组)<br>求一个数组中数组的累加和<br>使用for 实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.定义数组</span></span><br><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> total = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;numbers.length;i++)&#123;</span><br><span class="line">    total += number[i]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用forEach() 简化</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> total = <span class="number">0</span></span><br><span class="line">number.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">t</span>)</span>&#123;</span><br><span class="line">    total += t</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>使用reduce方法实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> total = numbers.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">pre,cur</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> pre + cur</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>pre 中每次传入的参数是不固定的，而是上次执行函数时的结果保存在了pre中<br>第一次执行，pre为0 ，cur 为1<br>第二次执行时, pre为1 (0+1, 上次函数执行的结果), cur为2<br>第三次执行时, pre为3 (1+2, 上次函数执行的结果), cur为3<br>第四次执行时, pre为6 (3+3, 上次函数执行的结果), cur为4<br>当cur为4时, 数组中的元素遍历完了, 就直接将第四次的结果, 作为reduce函数的返回值进行返回</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="LuXinZ.github.io2020/02/20/js/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luxin Z">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="2020/02/20/js/" target="_blank" rel="noopener" itemprop="url">js</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-20T12:57:53+08:00">
+                2020-02-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            for (let index = 0; index < 100000; index++) {
+    if (index % 1 == 0 && index % 2 == 1 && index % 3 == 0 && index % 4 == 1 && index % 5 == 1 && index % 6 == 3 && index % 7 == 0 && index % 8 == 1 && index % 9 == 0) {
+        console.log(index);
+
+
+    }
+
+}
+let index = 3969
+if (index % 1 == 0 && index % 2 == 1 && index % 3 == 0 && index % 4 == 1 && index % 5 == 1 && index % 6 == 3 && index % 7 == 0 && index % 8 == 1 && index % 9 == 0) {
+    console.log(index)
+} else {
+    console.log('错误');
+
+}
+
+let index = 3969
+if (index % 1 !== 0) {
+    console.log(1);
+
+} else if (index % 2 !== 1) {
+    console.log(2);
+
+} else if (index % 3 !== 0) {
+    console.log(3);
+} else if (index % 4 !== 1) {
+    console.log(4);
+} else if (index % 5 !== 1) {
+    console.log(5);
+} else if (index % 6 !== 3) {
+    console.log(6);
+} else if (index % 7 !== 0) {
+    console.log(7);
+} else if (index % 8 !== 1) {
+    console.log(8);
+} else if(index % 9 !== 0) {
+    console.log(9);
+}
+for (var i = 0; i <numbers.length; i++) {
+    numbers[i] = number[i+1]
+}
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="LuXinZ.github.io2020/02/19/数组遍历方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -950,7 +1277,7 @@ Promise.resolve 方法会讲这个对象转换为Promise对象，然后就立即
             <h1 id="最快最简答你的排序-桶排序"><a href="#最快最简答你的排序-桶排序" target="_blank" rel="noopener" class="headerlink" title="最快最简答你的排序  - 桶排序"></a>最快最简答你的排序  - 桶排序</h1><p>小明的班上只有5个同学，这5个同学分别考了5分，3分，5分，2分，和8分。 满分是10分。 接下来将分数进行从大到小排序。 排序后是 8 5 5 3 2 。 让计算机随机读入5个数然后将这5个数字从大大小输出<br>我们生命一个大小为11 的数组 ，现在已经有11个变量了编号从a[0] 到a[11]。 刚开始的时候，我们将a[0] 到 a[11] 都初始化为0，表示这些分数还没有人得过。例如a[0]等于0就表示还没有人得过0分，同理a[1] 等于0 就表示目前还没有人得过1分。、<br>下面开始处理每一个人的分数，第一个人的分数是5分，难么我们就将相对应的a[5]的值在原来的基础增加1 ，即a[5] 的值从0改为1， 表示5分出现了一次。<br>第二个人的分数是3分，我们就把相对应的a[3] 的值在原来的基础上增加1，即将a[3]的值从0 改为1 ，表示3 分出现过一次。<br>注意啦，第三个人的分数是5分，所以a[5] 的值需要在此基础上在增加1 ，即将a[5]的值从1 改为2 ，表示5分出现过了两次。<br>a[0]到a[10] 中的数值其实就是0分到10分每个分数出现的此处，接下来，我们只需要将出现过的分数打印出来就可以了，出现几次就打印几次。</p>
 <h1 id="冒泡排序"><a href="#冒泡排序" target="_blank" rel="noopener" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><p>冒泡排序的基本思想是： 每次比较两个相邻的元素，如果它们的顺序错误就把它们交换过来。<br>例如我们需要将 12 35 99 18 76 这5个数从大到小的排序，既然是从大到小排序，也就是越小的越靠后。<br>首先比较第一位和第二位的大小，现在第一位是12， 第二位是35，发现12 比35 要小，因为我们希望越小越靠后嘛，因此需要交换这两个数的位置，交换之后这5个数的顺序是 35 12 99 18 76<br>按照刚才的方法，继续比较第二位和第三位的大小，第二位是12，第三位是99。 12比99 要小，因此需要交换这两个数字的位置，交换之后这5个数的顺序是 35 9 12 18 76<br>最后，比较第四位和第五位，4次比较之后5个数的顺序是 35 99 18 76 12<br>经过四次比较之后我们发现最小的一个数已经就位了，现在来回忆一下刚才的比较过程，每次都是比较相邻的两个数，如果后面的数比前面的数大，则交换这两个数的位置，一直比较下去直到最后两个数比较完毕后，最小的数就在最后一个了，就如同是一个气泡，一步一步往后翻滚，直到最后一位。所以这个排序的方法的名字叫做冒泡排序。<br>我们的排序只将5个数最小的一个归位了，每将一个数归位我们将其称为一趟，下面重复刚才的过程，将剩下的4个数字归位。<br>冒泡排序的原理是： 每一趟只能确定将一个数归位。即第一趟只能确定末位上的数，即第五位，归位。 第二趟只能将倒数第二位（第四位）归位，第三趟只能将倒数第三位的数归位，而现在前面还有两个位置上的数没有归位，因此我们仍然需要进行第四趟<br>第四趟只需要比较第一位和第二位的大小，因为后面三个位置上的数归位了，现在第一位是99，第二位是76，，无需交换，这5个数的顺序不变仍然是99 76 35 18 12。 到此排序完美结束了，5个数已经有4个数归位，那最后一个数也只能放在第一位了。<br>最后我们总结一下，如果有n个数进行排序，只需要将n-1个数归位，也就是说要进行n-1趟操作，而每一趟都需要从第一位开始进行相邻两个数的比较，将较小的一个数放在后面，比较完毕后向后挪一位继续比较下面两个相邻数的大小，重复此步骤，知道最后一个尚未归位的数，已经归位的数无需在比较<br>冒泡排序的核心部分是双重嵌套循环不难看出冒泡排序的时间复杂度是O(N2)。这是一个非常高的时间复杂度。、</p>
 <h1 id="最常用的排序-快速排序。"><a href="#最常用的排序-快速排序。" target="_blank" rel="noopener" class="headerlink" title="最常用的排序- 快速排序。"></a>最常用的排序- 快速排序。</h1><p>上一节的冒泡排序可以说是我们学习的第一个真正的排序算法，并且解决了桶排序浪费空间的问题，但在算法的执行效率上却牺牲了很多，它的时间复杂度达到了O(N2)。<br>假设我们现在对 6 1 2 7 9 3 4 5 10 8 这10个数进行排序。首先在这个序列中随便找一个数作为基准数。为了方便，就让第一个数6作为基准数吧，接下来，需要将这个序列汇总所有比基准数大的数放在6的右边，比基准数小的数放在6的左边。类似下面这种排序。<br>3 1 2 5 4 6 9 7 10 8<br>在初始状态下，数字6在序列的第一位，我们的目标是将6挪到序列中间的某个位置，假设这个位置是k，现在就需要寻找这个k,并且以第k位为分界点，左边的数都小于6， 右边的数都大于6.<br>方法其实很简单，分别从初始序列 6 1 2 7 9 3 4 5 10 8 两端开始探测，先从右往左找一个小于6的数，在从左往右找一个大于6的数字。然后交换他们，这里可以用两个变量i和j，分别指向序列最左边和最右边。我们为这两个变量起个好听的名字哨兵i和哨兵j。 刚开始的时候让哨兵i指向序列的最左边，即i=1 ，指向数字6即j=10，指向数字8<br>首先哨兵j开始触动，因为此处设置的基准数是最左边的数，所以需要让哨兵j先出动，哨兵j一步一步地向左移动，j– ,知道找到一个小于6的数字停下来，接下来哨兵i在一步一步向右移动i++， 直到找到一个大于6的数停下来，最后哨兵j停在了数字5前面，哨兵i停在了数字7前面。<br>现在交换哨兵i和哨兵j所指向的元素的值，交换之后的序列如下。<br>6 1 2 【5】 9 3 4 【7】 10 8<br>到此第一次交换结束，接下来哨兵j继续向左移动，再次友情提示，每次必须是哨兵j先触发，她发现了4，之后听了下来，哨兵i也继续向右挪动，它发现了9之后停了下来。此时再次进行交换，交换之后序列如下<br>6 1 2 5 【4】 3 【9】 7 10 8<br>第二次交换结束，探测继续，哨兵j继续向左移动，它发现了3 之后又听了下来，哨兵i 继续 向右移动，此时哨兵i和哨兵j相遇了，哨兵i和哨兵j都走到了3面前，说明此时探测结束，我们将基准数6和3 交换，交换之后的序列如下。<br>【3】 1 2 5 4 【6】 9 7 10 8<br>到此第一轮探测真正结束，此时以基准数6为分界点，6左边的数都小于等于6。6右边的数都大于等于6。回顾一下刚才的过程，其实哨兵j的使命就是要找到小于基准数的数。而哨兵i的使命就是要找到大于基准数的数。直到i和j碰头为止。<br>现在基数6已经归位，它正好处在序列的第六位。此时我们已经将原来的序列，以6为分界点拆分成两个序列，左边的序列是 3 1 2 5 4 ，右边的序列是 9 7 10 8 。 接下来还需要分别处理这两个序列，因为6左边和右边的序列目前还是很混乱的。不过不要紧，我们已经掌握了方法，接下来只要模拟刚才的方法分别处理6左边和右边的序列即可。<br>现在先来处理6左边的序列<br>左边的序列是 3 1 2 5 4。 请将这个序列以3 为基准数进行调整，是的3左边的数都小于等于3 ，3 右边的数都大于等于3<br>如果模拟的没有错，调整完毕之后的序列的顺序应该会是<br>2 1 3 5 4<br>ok， 现在3 已经归位，接下来需要处理3 左边的序列 2 1 和右边的序列 5 4 。 对序列 2 1 以 2 为基准进行调整，处理完毕之后的序列为1 2 ， 到此2 已经归位，序列1 只有一个数，也不需要进行任何处理。 至此我们对序列 2  1 已经全部处理完毕 ，得到的序列是 1 2 。 序列 5 4 的处理也按照此方法，最后得到的序列如下。<br>1 2 3  4 5 6 9 7 10 8<br>对于系列<br>到此排序完全结束，快速排序的每一轮处理其实就是将这一轮的基准数归位，知道所有的数都归位为止，排序就结束了。<br>快速排序之所以比较快，是因为相比冒泡排序，每次交换都是跳跃式的。每次排序的时候设置一个基准点，将小于等于基准点的数全部放到基准点的左边，将大于等于基准点的数全放到右边。这样在每次交换的时候就不会像冒泡排序一样只能在相邻的数之间进行交换，交换的距离就打得多了，因此总的比较和交换次数就少了，速度自然提高了，当然在最欢的情况下，扔可能是相邻的两个数进行了交换，因此快速排序的最差时间复杂度和冒泡排序是一样的都是O(N2) 它的平均时间复杂度为O（NlogN）。 其实快速排序是基于一种叫做二分的思想。</p>
-<h1 id="小哼买书"><a href="#小哼买书" target="_blank" rel="noopener" class="headerlink" title="小哼买书"></a>小哼买书</h1><p>输入有 2 行，第 1 行为一个正整数，表示有 n 个同学参与调查（n≤100）。第 2 行有 n 个用空格隔开的正整数，为每本图书的 ISBN号（假设图书的 ISBN号在 1~1000之间）。<br>输出也是 2行，第 1行为一个正整数 k，表示需要买多少本书。第 2行为 k个用空格隔 开的正整数，为从小到大已排好序的需要购买的图书的 ISBN号。 </p>
+<h1 id="小哼买书"><a href="#小哼买书" target="_blank" rel="noopener" class="headerlink" title="小哼买书"></a>小哼买书</h1><p>输入有 2 行，第 1 行为一个正整数，表示有 n 个同学参与调查（n≤100）。第 2 行有 n 个用空格隔开的正整数，为每本图书的 ISBN号（假设图书的 ISBN号在 1~1000之间）。<br>输出也是 2行，第 1行为一个正整数 k，表示需要买多少本书。第 2行为 k个用空格隔 开的正整数，为从小到大已排好序的需要购买的图书的 ISBN号。<br>例如输入<br>10<br>20 40 32 67 40 20 89 300 400 15<br>则输出<br>8<br>15 20 32 40 67 89 300 400<br>最后程序运行的时间限制为1 秒<br>解决这个问题的方法大致有两种，第一种方法，现将这n个图书的IB</p>
 
           
         
@@ -1943,9 +2270,12 @@ Promise.prototype.them() 方法返回一个新的promise实例<figure class="hig
 使用async 关键字将创建一个具有一些异步特性的函数，但总体上仍会进行同步评估。在参数和闭包之类的所有其他方面，它仍然展现JS 函数的所有正常行为，它显示在继续执行后续指令仍对foo() 函数进行求值<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>); &#125;</span><br><span class="line"> </span><br><span class="line">foo(); </span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 1 // 2</span></span><br></pre></td></tr></table></figure>
 在异步函数中，使用return 关键字返回的任何职将通过promise.resolve() 有效的转换为promise 对象。异步函数将始终返回promise 对象，在函数外部，求职函数将是此promise对象。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>);  </span><br><span class="line">    <span class="keyword">return</span> <span class="number">3</span>; &#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// Attach a resolved handler to the returned promise </span></span><br><span class="line">foo().then(<span class="built_in">console</span>.log);</span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 1 // 2 // 3</span></span><br></pre></td></tr></table></figure>
 当然，这意味着返回promise对象将提供相同的行为<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>);  </span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(<span class="number">3</span>); &#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// Attach a resolved handler to the returned promise </span></span><br><span class="line">foo().then(<span class="built_in">console</span>.log);</span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 1 // 2 // 3</span></span><br></pre></td></tr></table></figure>
-<h1 id="THE-BROWSER-OBJECT-MODEL"><a href="#THE-BROWSER-OBJECT-MODEL" target="_blank" rel="noopener" class="headerlink" title="THE BROWSER OBJECT MODEL"></a>THE BROWSER OBJECT MODEL</h1><h2 id="The-window-object"><a href="#The-window-object" target="_blank" rel="noopener" class="headerlink" title="The window object"></a>The window object</h2><h3 id="The-Global-Scope"><a href="#The-Global-Scope" target="_blank" rel="noopener" class="headerlink" title="The Global Scope"></a>The Global Scope</h3><h3 id="Window-Relationships"><a href="#Window-Relationships" target="_blank" rel="noopener" class="headerlink" title="Window Relationships"></a>Window Relationships</h3><h3 id="Window-Position-and-Pixel-Ratio"><a href="#Window-Position-and-Pixel-Ratio" target="_blank" rel="noopener" class="headerlink" title="Window Position and Pixel Ratio"></a>Window Position and Pixel Ratio</h3><h4 id="Pixel-Ratios"><a href="#Pixel-Ratios" target="_blank" rel="noopener" class="headerlink" title="Pixel Ratios"></a>Pixel Ratios</h4><h3 id="Window-Size"><a href="#Window-Size" target="_blank" rel="noopener" class="headerlink" title="Window Size"></a>Window Size</h3><h3 id="Window-Viewport-Position"><a href="#Window-Viewport-Position" target="_blank" rel="noopener" class="headerlink" title="Window Viewport Position"></a>Window Viewport Position</h3><h3 id="Navigating-and-Opening-Windows"><a href="#Navigating-and-Opening-Windows" target="_blank" rel="noopener" class="headerlink" title="Navigating and Opening Windows"></a>Navigating and Opening Windows</h3><h4 id="Popping-Up-Windows"><a href="#Popping-Up-Windows" target="_blank" rel="noopener" class="headerlink" title="Popping Up Windows"></a>Popping Up Windows</h4><h4 id="Security-Restrictions"><a href="#Security-Restrictions" target="_blank" rel="noopener" class="headerlink" title="Security Restrictions"></a>Security Restrictions</h4><h4 id="Pop-up-Blockers"><a href="#Pop-up-Blockers" target="_blank" rel="noopener" class="headerlink" title="Pop-up Blockers"></a>Pop-up Blockers</h4><h3 id="Intervals-and-Timeouts"><a href="#Intervals-and-Timeouts" target="_blank" rel="noopener" class="headerlink" title="Intervals and Timeouts"></a>Intervals and Timeouts</h3><h3 id="System-Dialogs"><a href="#System-Dialogs" target="_blank" rel="noopener" class="headerlink" title="System Dialogs"></a>System Dialogs</h3><h2 id="The-location-object"><a href="#The-location-object" target="_blank" rel="noopener" class="headerlink" title="The location object"></a>The location object</h2><h3 id="Query-String-Arguments"><a href="#Query-String-Arguments" target="_blank" rel="noopener" class="headerlink" title="Query String Arguments"></a>Query String Arguments</h3><h4 id="URLSearchParams"><a href="#URLSearchParams" target="_blank" rel="noopener" class="headerlink" title="URLSearchParams"></a>URLSearchParams</h4><h3 id="Manipulating-the-Location"><a href="#Manipulating-the-Location" target="_blank" rel="noopener" class="headerlink" title="Manipulating the Location"></a>Manipulating the Location</h3><h2 id="The-navigator-object"><a href="#The-navigator-object" target="_blank" rel="noopener" class="headerlink" title="The navigator object"></a>The navigator object</h2><h3 id="Detecting-Plug-ins"><a href="#Detecting-Plug-ins" target="_blank" rel="noopener" class="headerlink" title="Detecting Plug-ins"></a>Detecting Plug-ins</h3><h4 id="Legacy-Internet-Explorer-Plugin-Detection"><a href="#Legacy-Internet-Explorer-Plugin-Detection" target="_blank" rel="noopener" class="headerlink" title="Legacy Internet Explorer Plugin Detection"></a>Legacy Internet Explorer Plugin Detection</h4><h3 id="Registering-Handlers"><a href="#Registering-Handlers" target="_blank" rel="noopener" class="headerlink" title="Registering Handlers"></a>Registering Handlers</h3><h2 id="-13"><a href="#-13" target="_blank" rel="noopener" class="headerlink" title=""></a></h2><h2 id="-14"><a href="#-14" target="_blank" rel="noopener" class="headerlink" title=""></a></h2></li>
+<h1 id="THE-BROWSER-OBJECT-MODEL"><a href="#THE-BROWSER-OBJECT-MODEL" target="_blank" rel="noopener" class="headerlink" title="THE BROWSER OBJECT MODEL"></a>THE BROWSER OBJECT MODEL</h1><h2 id="The-window-object"><a href="#The-window-object" target="_blank" rel="noopener" class="headerlink" title="The window object"></a>The window object</h2>BOM 的核心对象是window，它表示浏览器的一个实例。在浏览器中，window对象由双重角色，它既是JS 访问浏览器窗口的一个接口，又是ES规定的Global 对象。这意味着在网页中定义的任何一个对象，变量和函数，都以window 作为其global 对象，因此有权访问parseInt() 方法。<h3 id="The-Global-Scope-全局作用域"><a href="#The-Global-Scope-全局作用域" target="_blank" rel="noopener" class="headerlink" title="The Global Scope 全局作用域"></a>The Global Scope 全局作用域</h3>因为window 对象是 Global 对象的一样角色，因此所有在全局用var 声明的所有变量和函数都将window对象的属性和方法<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">29</span>; </span><br><span class="line"><span class="keyword">var</span> sayAge = <span class="function"><span class="params">()</span> =&gt;</span> alert(<span class="keyword">this</span>.age);           alert(<span class="built_in">window</span>.age);  <span class="comment">// 29 </span></span><br><span class="line">sayAge();           <span class="comment">// 29 </span></span><br><span class="line"><span class="built_in">window</span>.sayAge();    <span class="comment">// 29</span></span><br></pre></td></tr></table></figure>
+我们在全局作用域中定义了一个变量age和一个函数sayAge(),他们被自动归在了window对象名下。于是，可以通过window.age 访问变量age,可以通过window.sayAge() 访问函数sayAge() 。由于sayAge() 存在于全局作用域中，因此this.age被映射到window.age ，最终显示的仍然是正确的结果。<br>相反，使用let或者const代替var,则不会出现对全局对象的默认附件<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> age = <span class="number">29</span>; </span><br><span class="line"><span class="keyword">const</span> sayAge = <span class="function"><span class="params">()</span> =&gt;</span> alert(<span class="keyword">this</span>.age);           alert(<span class="built_in">window</span>.age);  <span class="comment">// undefined </span></span><br><span class="line">sayAge();           <span class="comment">// undefined </span></span><br><span class="line"><span class="built_in">window</span>.sayAge();    <span class="comment">// TypeError: window.sayAge is not a function</span></span><br></pre></td></tr></table></figure>
+要记住另外一个事，尝试访问为生命的变量会引发错误，但是可以通过查看window对象来检查是否存在潜在的为生命变量<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// this throws an error because oldValue is undeclared </span></span><br><span class="line"><span class="keyword">var</span> newValue = oldValue;</span><br><span class="line"><span class="comment">// this doesn't throw an error, because it's a property lookup </span></span><br><span class="line"><span class="comment">// newValue is set to undefined </span></span><br><span class="line"><span class="keyword">var</span> newValue = <span class="built_in">window</span>.oldValue;</span><br></pre></td></tr></table></figure>
+记住这一点，JS中有许多对象被认为是全局对象例如location 和navigator ， 但实际上是window 对象的属性。<h3 id="Window-Relationships-窗口关系"><a href="#Window-Relationships-窗口关系" target="_blank" rel="noopener" class="headerlink" title="Window Relationships 窗口关系"></a>Window Relationships 窗口关系</h3></li>
 </ul>
-
+<h3 id="Window-Position-and-Pixel-Ratio"><a href="#Window-Position-and-Pixel-Ratio" target="_blank" rel="noopener" class="headerlink" title="Window Position and Pixel Ratio"></a>Window Position and Pixel Ratio</h3><h4 id="Pixel-Ratios"><a href="#Pixel-Ratios" target="_blank" rel="noopener" class="headerlink" title="Pixel Ratios"></a>Pixel Ratios</h4><h3 id="Window-Size"><a href="#Window-Size" target="_blank" rel="noopener" class="headerlink" title="Window Size"></a>Window Size</h3><h3 id="Window-Viewport-Position"><a href="#Window-Viewport-Position" target="_blank" rel="noopener" class="headerlink" title="Window Viewport Position"></a>Window Viewport Position</h3><h3 id="Navigating-and-Opening-Windows"><a href="#Navigating-and-Opening-Windows" target="_blank" rel="noopener" class="headerlink" title="Navigating and Opening Windows"></a>Navigating and Opening Windows</h3><h4 id="Popping-Up-Windows"><a href="#Popping-Up-Windows" target="_blank" rel="noopener" class="headerlink" title="Popping Up Windows"></a>Popping Up Windows</h4><h4 id="Security-Restrictions"><a href="#Security-Restrictions" target="_blank" rel="noopener" class="headerlink" title="Security Restrictions"></a>Security Restrictions</h4><h4 id="Pop-up-Blockers"><a href="#Pop-up-Blockers" target="_blank" rel="noopener" class="headerlink" title="Pop-up Blockers"></a>Pop-up Blockers</h4><h3 id="Intervals-and-Timeouts"><a href="#Intervals-and-Timeouts" target="_blank" rel="noopener" class="headerlink" title="Intervals and Timeouts"></a>Intervals and Timeouts</h3><h3 id="System-Dialogs"><a href="#System-Dialogs" target="_blank" rel="noopener" class="headerlink" title="System Dialogs"></a>System Dialogs</h3><h2 id="The-location-object"><a href="#The-location-object" target="_blank" rel="noopener" class="headerlink" title="The location object"></a>The location object</h2><h3 id="Query-String-Arguments"><a href="#Query-String-Arguments" target="_blank" rel="noopener" class="headerlink" title="Query String Arguments"></a>Query String Arguments</h3><h4 id="URLSearchParams"><a href="#URLSearchParams" target="_blank" rel="noopener" class="headerlink" title="URLSearchParams"></a>URLSearchParams</h4><h3 id="Manipulating-the-Location"><a href="#Manipulating-the-Location" target="_blank" rel="noopener" class="headerlink" title="Manipulating the Location"></a>Manipulating the Location</h3><h2 id="The-navigator-object"><a href="#The-navigator-object" target="_blank" rel="noopener" class="headerlink" title="The navigator object"></a>The navigator object</h2><h3 id="Detecting-Plug-ins"><a href="#Detecting-Plug-ins" target="_blank" rel="noopener" class="headerlink" title="Detecting Plug-ins"></a>Detecting Plug-ins</h3><h4 id="Legacy-Internet-Explorer-Plugin-Detection"><a href="#Legacy-Internet-Explorer-Plugin-Detection" target="_blank" rel="noopener" class="headerlink" title="Legacy Internet Explorer Plugin Detection"></a>Legacy Internet Explorer Plugin Detection</h4><h3 id="Registering-Handlers"><a href="#Registering-Handlers" target="_blank" rel="noopener" class="headerlink" title="Registering Handlers"></a>Registering Handlers</h3><h2 id="The-screen-object"><a href="#The-screen-object" target="_blank" rel="noopener" class="headerlink" title="The screen object"></a>The screen object</h2><h2 id="The-history-object"><a href="#The-history-object" target="_blank" rel="noopener" class="headerlink" title="The history object"></a>The history object</h2><h3 id="Navigation"><a href="#Navigation" target="_blank" rel="noopener" class="headerlink" title="Navigation"></a>Navigation</h3><h3 id="History-State-Management"><a href="#History-State-Management" target="_blank" rel="noopener" class="headerlink" title="History State Management"></a>History State Management</h3>
           
         
       
@@ -2026,7 +2356,7 @@ Promise.prototype.them() 方法返回一个新的promise实例<figure class="hig
               
                 <a href="/archives/" target="_blank" rel="noopener">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
