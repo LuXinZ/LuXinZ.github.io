@@ -79,15 +79,13 @@
 
 
 
-<meta name="description" content="变量， 范围， 和 内存primitive 原始值 和 reference values 引用值 变量中包含两种不同的类型数据 原始值 就是简单的数据，基本数据类型 引用值： 就是由多个值组成的对象   将数据值分配给一个变量之后，JS 必须要确定他的数据类型是原始值还是引用值。 六个原始&#x2F;基本类型 ： undefined ，null , boolean, string, number, symb">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JS 高级程序设计 读书笔记">
-<meta property="og:url" content="2020/02/06/JS%20%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%20%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.html">
+<meta name="description" content="用于分享读书笔记">
+<meta property="og:type" content="website">
+<meta property="og:title" content="个人博客">
+<meta property="og:url" content="page/2/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="变量， 范围， 和 内存primitive 原始值 和 reference values 引用值 变量中包含两种不同的类型数据 原始值 就是简单的数据，基本数据类型 引用值： 就是由多个值组成的对象   将数据值分配给一个变量之后，JS 必须要确定他的数据类型是原始值还是引用值。 六个原始&#x2F;基本类型 ： undefined ，null , boolean, string, number, symb">
+<meta property="og:description" content="用于分享读书笔记">
 <meta property="og:locale" content="zh">
-<meta property="article:published_time" content="2020-02-05T16:27:57.000Z">
-<meta property="article:modified_time" content="2020-02-21T12:53:05.728Z">
 <meta property="article:author" content="Luxin Z">
 <meta name="twitter:card" content="summary">
 
@@ -119,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="LuXinZ.github.io/2020/02/06/JS 高级程序设计 读书笔记/"/>
+  <link rel="canonical" href="LuXinZ.github.io/page/2/"/>
 
 
 
 
 
-  <title>JS 高级程序设计 读书笔记 | 个人博客</title>
+  <title>个人博客</title>
   
 
 
@@ -144,7 +142,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -217,9 +216,370 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="LuXinZ.github.io2020/02/14/算法1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luxin Z">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="2020/02/14/算法1/" target="_blank" rel="noopener" itemprop="url">算法1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-14T12:54:35+08:00">
+                2020-02-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="最快最简答你的排序-桶排序"><a href="#最快最简答你的排序-桶排序" target="_blank" rel="noopener" class="headerlink" title="最快最简答你的排序  - 桶排序"></a>最快最简答你的排序  - 桶排序</h1><p>小明的班上只有5个同学，这5个同学分别考了5分，3分，5分，2分，和8分。 满分是10分。 接下来将分数进行从大到小排序。 排序后是 8 5 5 3 2 。 让计算机随机读入5个数然后将这5个数字从大大小输出<br>我们生命一个大小为11 的数组 ，现在已经有11个变量了编号从a[0] 到a[11]。 刚开始的时候，我们将a[0] 到 a[11] 都初始化为0，表示这些分数还没有人得过。例如a[0]等于0就表示还没有人得过0分，同理a[1] 等于0 就表示目前还没有人得过1分。、<br>下面开始处理每一个人的分数，第一个人的分数是5分，难么我们就将相对应的a[5]的值在原来的基础增加1 ，即a[5] 的值从0改为1， 表示5分出现了一次。<br>第二个人的分数是3分，我们就把相对应的a[3] 的值在原来的基础上增加1，即将a[3]的值从0 改为1 ，表示3 分出现过一次。<br>注意啦，第三个人的分数是5分，所以a[5] 的值需要在此基础上在增加1 ，即将a[5]的值从1 改为2 ，表示5分出现过了两次。<br>a[0]到a[10] 中的数值其实就是0分到10分每个分数出现的此处，接下来，我们只需要将出现过的分数打印出来就可以了，出现几次就打印几次。</p>
+<h1 id="冒泡排序"><a href="#冒泡排序" target="_blank" rel="noopener" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><p>冒泡排序的基本思想是： 每次比较两个相邻的元素，如果它们的顺序错误就把它们交换过来。<br>例如我们需要将 12 35 99 18 76 这5个数从大到小的排序，既然是从大到小排序，也就是越小的越靠后。<br>首先比较第一位和第二位的大小，现在第一位是12， 第二位是35，发现12 比35 要小，因为我们希望越小越靠后嘛，因此需要交换这两个数的位置，交换之后这5个数的顺序是 35 12 99 18 76<br>按照刚才的方法，继续比较第二位和第三位的大小，第二位是12，第三位是99。 12比99 要小，因此需要交换这两个数字的位置，交换之后这5个数的顺序是 35 9 12 18 76<br>最后，比较第四位和第五位，4次比较之后5个数的顺序是 35 99 18 76 12<br>经过四次比较之后我们发现最小的一个数已经就位了，现在来回忆一下刚才的比较过程，每次都是比较相邻的两个数，如果后面的数比前面的数大，则交换这两个数的位置，一直比较下去直到最后两个数比较完毕后，最小的数就在最后一个了，就如同是一个气泡，一步一步往后翻滚，直到最后一位。所以这个排序的方法的名字叫做冒泡排序。<br>我们的排序只将5个数最小的一个归位了，每将一个数归位我们将其称为一趟，下面重复刚才的过程，将剩下的4个数字归位。<br>冒泡排序的原理是： 每一趟只能确定将一个数归位。即第一趟只能确定末位上的数，即第五位，归位。 第二趟只能将倒数第二位（第四位）归位，第三趟只能将倒数第三位的数归位，而现在前面还有两个位置上的数没有归位，因此我们仍然需要进行第四趟<br>第四趟只需要比较第一位和第二位的大小，因为后面三个位置上的数归位了，现在第一位是99，第二位是76，，无需交换，这5个数的顺序不变仍然是99 76 35 18 12。 到此排序完美结束了，5个数已经有4个数归位，那最后一个数也只能放在第一位了。<br>最后我们总结一下，如果有n个数进行排序，只需要将n-1个数归位，也就是说要进行n-1趟操作，而每一趟都需要从第一位开始进行相邻两个数的比较，将较小的一个数放在后面，比较完毕后向后挪一位继续比较下面两个相邻数的大小，重复此步骤，知道最后一个尚未归位的数，已经归位的数无需在比较<br>冒泡排序的核心部分是双重嵌套循环不难看出冒泡排序的时间复杂度是O(N2)。这是一个非常高的时间复杂度。、</p>
+<h1 id="最常用的排序-快速排序。"><a href="#最常用的排序-快速排序。" target="_blank" rel="noopener" class="headerlink" title="最常用的排序- 快速排序。"></a>最常用的排序- 快速排序。</h1><p>上一节的冒泡排序可以说是我们学习的第一个真正的排序算法，并且解决了桶排序浪费空间的问题，但在算法的执行效率上却牺牲了很多，它的时间复杂度达到了O(N2)。<br>假设我们现在对 6 1 2 7 9 3 4 5 10 8 这10个数进行排序。首先在这个序列中随便找一个数作为基准数。为了方便，就让第一个数6作为基准数吧，接下来，需要将这个序列汇总所有比基准数大的数放在6的右边，比基准数小的数放在6的左边。类似下面这种排序。<br>3 1 2 5 4 6 9 7 10 8<br>在初始状态下，数字6在序列的第一位，我们的目标是将6挪到序列中间的某个位置，假设这个位置是k，现在就需要寻找这个k,并且以第k位为分界点，左边的数都小于6， 右边的数都大于6.<br>方法其实很简单，分别从初始序列 6 1 2 7 9 3 4 5 10 8 两端开始探测，先从右往左找一个小于6的数，在从左往右找一个大于6的数字。然后交换他们，这里可以用两个变量i和j，分别指向序列最左边和最右边。我们为这两个变量起个好听的名字哨兵i和哨兵j。 刚开始的时候让哨兵i指向序列的最左边，即i=1 ，指向数字6即j=10，指向数字8<br>首先哨兵j开始触动，因为此处设置的基准数是最左边的数，所以需要让哨兵j先出动，哨兵j一步一步地向左移动，j– ,知道找到一个小于6的数字停下来，接下来哨兵i在一步一步向右移动i++， 直到找到一个大于6的数停下来，最后哨兵j停在了数字5前面，哨兵i停在了数字7前面。<br>现在交换哨兵i和哨兵j所指向的元素的值，交换之后的序列如下。<br>6 1 2 【5】 9 3 4 【7】 10 8<br>到此第一次交换结束，接下来哨兵j继续向左移动，再次友情提示，每次必须是哨兵j先触发，她发现了4，之后听了下来，哨兵i也继续向右挪动，它发现了9之后停了下来。此时再次进行交换，交换之后序列如下<br>6 1 2 5 【4】 3 【9】 7 10 8<br>第二次交换结束，探测继续，哨兵j继续向左移动，它发现了3 之后又听了下来，哨兵i 继续 向右移动，此时哨兵i和哨兵j相遇了，哨兵i和哨兵j都走到了3面前，说明此时探测结束，我们将基准数6和3 交换，交换之后的序列如下。<br>【3】 1 2 5 4 【6】 9 7 10 8<br>到此第一轮探测真正结束，此时以基准数6为分界点，6左边的数都小于等于6。6右边的数都大于等于6。回顾一下刚才的过程，其实哨兵j的使命就是要找到小于基准数的数。而哨兵i的使命就是要找到大于基准数的数。直到i和j碰头为止。<br>现在基数6已经归位，它正好处在序列的第六位。此时我们已经将原来的序列，以6为分界点拆分成两个序列，左边的序列是 3 1 2 5 4 ，右边的序列是 9 7 10 8 。 接下来还需要分别处理这两个序列，因为6左边和右边的序列目前还是很混乱的。不过不要紧，我们已经掌握了方法，接下来只要模拟刚才的方法分别处理6左边和右边的序列即可。<br>现在先来处理6左边的序列<br>左边的序列是 3 1 2 5 4。 请将这个序列以3 为基准数进行调整，是的3左边的数都小于等于3 ，3 右边的数都大于等于3<br>如果模拟的没有错，调整完毕之后的序列的顺序应该会是<br>2 1 3 5 4<br>ok， 现在3 已经归位，接下来需要处理3 左边的序列 2 1 和右边的序列 5 4 。 对序列 2 1 以 2 为基准进行调整，处理完毕之后的序列为1 2 ， 到此2 已经归位，序列1 只有一个数，也不需要进行任何处理。 至此我们对序列 2  1 已经全部处理完毕 ，得到的序列是 1 2 。 序列 5 4 的处理也按照此方法，最后得到的序列如下。<br>1 2 3  4 5 6 9 7 10 8<br>对于系列<br>到此排序完全结束，快速排序的每一轮处理其实就是将这一轮的基准数归位，知道所有的数都归位为止，排序就结束了。<br>快速排序之所以比较快，是因为相比冒泡排序，每次交换都是跳跃式的。每次排序的时候设置一个基准点，将小于等于基准点的数全部放到基准点的左边，将大于等于基准点的数全放到右边。这样在每次交换的时候就不会像冒泡排序一样只能在相邻的数之间进行交换，交换的距离就打得多了，因此总的比较和交换次数就少了，速度自然提高了，当然在最欢的情况下，扔可能是相邻的两个数进行了交换，因此快速排序的最差时间复杂度和冒泡排序是一样的都是O(N2) 它的平均时间复杂度为O（NlogN）。 其实快速排序是基于一种叫做二分的思想。</p>
+<h1 id="小哼买书"><a href="#小哼买书" target="_blank" rel="noopener" class="headerlink" title="小哼买书"></a>小哼买书</h1><p>输入有 2 行，第 1 行为一个正整数，表示有 n 个同学参与调查（n≤100）。第 2 行有 n 个用空格隔开的正整数，为每本图书的 ISBN号（假设图书的 ISBN号在 1~1000之间）。<br>输出也是 2行，第 1行为一个正整数 k，表示需要买多少本书。第 2行为 k个用空格隔 开的正整数，为从小到大已排好序的需要购买的图书的 ISBN号。<br>例如输入<br>10<br>20 40 32 67 40 20 89 300 400 15<br>则输出<br>8<br>15 20 32 40 67 89 300 400<br>最后程序运行的时间限制为1 秒<br>解决这个问题的方法大致有两种，第一种方法，现将这n个图书的IB</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="LuXinZ.github.io2020/02/13/面试题大图上传功能/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luxin Z">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="2020/02/13/面试题大图上传功能/" target="_blank" rel="noopener" itemprop="url">面试题大图上传功能</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-13T20:03:33+08:00">
+                2020-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="LuXinZ.github.io2020/02/08/vue学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luxin Z">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="2020/02/08/vue学习/" target="_blank" rel="noopener" itemprop="url">vue学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-08T13:37:41+08:00">
+                2020-02-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
 
   
 
@@ -249,7 +609,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JS 高级程序设计 读书笔记</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="2020/02/06/JS 高级程序设计 读书笔记/" target="_blank" rel="noopener" itemprop="url">JS 高级程序设计 读书笔记</a></h1>
         
 
         <div class="post-meta">
@@ -299,7 +661,9 @@
       
 
       
-        <h1 id="变量，-范围，-和-内存"><a href="#变量，-范围，-和-内存" target="_blank" rel="noopener" class="headerlink" title="变量， 范围， 和 内存"></a>变量， 范围， 和 内存</h1><h2 id="primitive-原始值-和-reference-values-引用值"><a href="#primitive-原始值-和-reference-values-引用值" target="_blank" rel="noopener" class="headerlink" title="primitive 原始值 和 reference values 引用值"></a>primitive 原始值 和 reference values 引用值</h2><ul>
+        
+          
+            <h1 id="变量，-范围，-和-内存"><a href="#变量，-范围，-和-内存" target="_blank" rel="noopener" class="headerlink" title="变量， 范围， 和 内存"></a>变量， 范围， 和 内存</h1><h2 id="primitive-原始值-和-reference-values-引用值"><a href="#primitive-原始值-和-reference-values-引用值" target="_blank" rel="noopener" class="headerlink" title="primitive 原始值 和 reference values 引用值"></a>primitive 原始值 和 reference values 引用值</h2><ul>
 <li>变量中包含两种不同的类型数据<ul>
 <li>原始值 就是简单的数据，基本数据类型</li>
 <li>引用值： 就是由多个值组成的对象</li>
@@ -943,6 +1307,8 @@ Promise.prototype.them() 方法返回一个新的promise实例<figure class="hig
 与窗口移动方法一样，也可能被禁用，并且某些浏览器会默认禁用，另外，这两个不适用于框架，只能对最外层的window 对象使用。<h3 id="Window-Viewport-Position"><a href="#Window-Viewport-Position" target="_blank" rel="noopener" class="headerlink" title="Window Viewport Position"></a>Window Viewport Position</h3>485<h3 id="Navigating-and-Opening-Windows-导航和打开窗口"><a href="#Navigating-and-Opening-Windows-导航和打开窗口" target="_blank" rel="noopener" class="headerlink" title="Navigating and Opening Windows 导航和打开窗口"></a>Navigating and Opening Windows 导航和打开窗口</h3><h4 id="Popping-Up-Windows"><a href="#Popping-Up-Windows" target="_blank" rel="noopener" class="headerlink" title="Popping Up Windows"></a>Popping Up Windows</h4><h4 id="Security-Restrictions"><a href="#Security-Restrictions" target="_blank" rel="noopener" class="headerlink" title="Security Restrictions"></a>Security Restrictions</h4><h4 id="Pop-up-Blockers"><a href="#Pop-up-Blockers" target="_blank" rel="noopener" class="headerlink" title="Pop-up Blockers"></a>Pop-up Blockers</h4><h3 id="Intervals-and-Timeouts-间接调用和超时调用"><a href="#Intervals-and-Timeouts-间接调用和超时调用" target="_blank" rel="noopener" class="headerlink" title="Intervals and Timeouts 间接调用和超时调用"></a>Intervals and Timeouts 间接调用和超时调用</h3><h3 id="System-Dialogs-系统对话框"><a href="#System-Dialogs-系统对话框" target="_blank" rel="noopener" class="headerlink" title="System Dialogs 系统对话框"></a>System Dialogs 系统对话框</h3><h2 id="The-location-object"><a href="#The-location-object" target="_blank" rel="noopener" class="headerlink" title="The location object"></a>The location object</h2><h3 id="Query-String-Arguments"><a href="#Query-String-Arguments" target="_blank" rel="noopener" class="headerlink" title="Query String Arguments"></a>Query String Arguments</h3><h4 id="URLSearchParams"><a href="#URLSearchParams" target="_blank" rel="noopener" class="headerlink" title="URLSearchParams"></a>URLSearchParams</h4><h3 id="Manipulating-the-Location"><a href="#Manipulating-the-Location" target="_blank" rel="noopener" class="headerlink" title="Manipulating the Location"></a>Manipulating the Location</h3><h2 id="The-navigator-object"><a href="#The-navigator-object" target="_blank" rel="noopener" class="headerlink" title="The navigator object"></a>The navigator object</h2><h3 id="Detecting-Plug-ins"><a href="#Detecting-Plug-ins" target="_blank" rel="noopener" class="headerlink" title="Detecting Plug-ins"></a>Detecting Plug-ins</h3><h4 id="Legacy-Internet-Explorer-Plugin-Detection"><a href="#Legacy-Internet-Explorer-Plugin-Detection" target="_blank" rel="noopener" class="headerlink" title="Legacy Internet Explorer Plugin Detection"></a>Legacy Internet Explorer Plugin Detection</h4><h3 id="Registering-Handlers"><a href="#Registering-Handlers" target="_blank" rel="noopener" class="headerlink" title="Registering Handlers"></a>Registering Handlers</h3><h2 id="The-screen-object"><a href="#The-screen-object" target="_blank" rel="noopener" class="headerlink" title="The screen object"></a>The screen object</h2><h2 id="The-history-object"><a href="#The-history-object" target="_blank" rel="noopener" class="headerlink" title="The history object"></a>The history object</h2><h3 id="Navigation"><a href="#Navigation" target="_blank" rel="noopener" class="headerlink" title="Navigation"></a>Navigation</h3><h3 id="History-State-Management"><a href="#History-State-Management" target="_blank" rel="noopener" class="headerlink" title="History State Management"></a>History State Management</h3></li>
 </ul>
 
+          
+        
       
     </div>
     
@@ -959,28 +1325,12 @@ Promise.prototype.them() 方法返回一个新的promise实例<figure class="hig
       
 
       
-      
+
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="2020/02/08/vue学习/" target="_blank" rel="prev noopener" title="vue学习">
-                vue学习 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -990,11 +1340,14 @@ Promise.prototype.them() 方法返回一个新的promise实例<figure class="hig
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev noopener" href="">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class=" target="_blank"page-number" href="">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
@@ -1002,10 +1355,6 @@ Promise.prototype.them() 方法返回一个新的promise实例<figure class="hig
 
 
           
-
-  
-
-
 
         </div>
         
@@ -1026,17 +1375,8 @@ Promise.prototype.them() 方法返回一个新的promise实例<figure class="hig
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1078,22 +1418,6 @@ Promise.prototype.them() 方法返回一个新的promise实例<figure class="hig
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#变量，-范围，-和-内存" target="_blank" rel="noopener"><span class="nav-number">1.</span> <span class="nav-text">变量， 范围， 和 内存</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#primitive-原始值-和-reference-values-引用值" target="_blank" rel="noopener"><span class="nav-number">1.1.</span> <span class="nav-text">primitive 原始值 和 reference values 引用值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Dynamic-properties-动态属性" target="_blank" rel="noopener"><span class="nav-number">1.1.1.</span> <span class="nav-text">Dynamic properties 动态属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Copying-Values-复制值" target="_blank" rel="noopener"><span class="nav-number">1.1.2.</span> <span class="nav-text">Copying Values 复制值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Argument-Passing-参数传递" target="_blank" rel="noopener"><span class="nav-number">1.1.3.</span> <span class="nav-text">Argument Passing  参数传递</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Determining-Type-确定类型" target="_blank" rel="noopener"><span class="nav-number">1.1.4.</span> <span class="nav-text">Determining Type  确定类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EXECUTION-CONTEXT-AND-SCOPE-执行上下和作用域" target="_blank" rel="noopener"><span class="nav-number">1.2.</span> <span class="nav-text">EXECUTION CONTEXT AND SCOPE 执行上下和作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Scope-Chain-Augmentatio-延长作用域链" target="_blank" rel="noopener"><span class="nav-number">1.2.1.</span> <span class="nav-text">Scope Chain Augmentatio 延长作用域链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量声明" target="_blank" rel="noopener"><span class="nav-number">1.2.2.</span> <span class="nav-text">变量声明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Function-Scope-Declaration-Using-var-使用var的函数声明范围" target="_blank" rel="noopener"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">Function Scope Declaration Using var 使用var的函数声明范围</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Block-Scope-Declaration-Using-let-使用let的块级声明" target="_blank" rel="noopener"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">Block Scope Declaration Using let 使用let的块级声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Constant-Declaration-Using-const-使用const的常量声明" target="_blank" rel="noopener"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">Constant Declaration Using const 使用const的常量声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Identifier-Lookup-标识符查询" target="_blank" rel="noopener"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">Identifier Lookup 标识符查询</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Garbage-Collection-垃圾收集" target="_blank" rel="noopener"><span class="nav-number">1.3.</span> <span class="nav-text">Garbage Collection 垃圾收集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mark-and-Sweep-标记清除" target="_blank" rel="noopener"><span class="nav-number">1.3.1.</span> <span class="nav-text">Mark-and-Sweep  标记清除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference-Counting-引用计数" target="_blank" rel="noopener"><span class="nav-number">1.3.2.</span> <span class="nav-text">Reference Counting 引用计数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Performance" target="_blank" rel="noopener"><span class="nav-number">1.3.3.</span> <span class="nav-text">Performance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Managing-Memory" target="_blank" rel="noopener"><span class="nav-number">1.3.4.</span> <span class="nav-text">Managing Memory</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Performance-Boosts-with-const-and-let-Declarations" target="_blank" rel="noopener"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">Performance Boosts with const and let Declarations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hidden-Classes-and-the-delete-Operation-隐藏类和删除操作" target="_blank" rel="noopener"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">Hidden Classes and the delete Operation 隐藏类和删除操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Memory-Leaks-内存泄露" target="_blank" rel="noopener"><span class="nav-number">1.3.4.3.</span> <span class="nav-text">Memory Leaks 内存泄露</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Static-Allocation-and-Object-Pools-Static-Allocation-and-Object-Pools" target="_blank" rel="noopener"><span class="nav-number">1.3.4.4.</span> <span class="nav-text">Static Allocation and Object Pools Static Allocation and Object Pools</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary" target="_blank" rel="noopener"><span class="nav-number">1.3.5.</span> <span class="nav-text">Summary</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic-Reference-Type" target="_blank" rel="noopener"><span class="nav-number">2.</span> <span class="nav-text">Basic Reference Type</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Date-Type-日期类型" target="_blank" rel="noopener"><span class="nav-number">2.1.</span> <span class="nav-text">The Date Type 日期类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Inherited-Methods-继承方法" target="_blank" rel="noopener"><span class="nav-number">2.1.1.</span> <span class="nav-text">Inherited Methods 继承方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Date-Formatting-Methods-日期格式化方法" target="_blank" rel="noopener"><span class="nav-number">2.1.2.</span> <span class="nav-text">Date-Formatting Methods 日期格式化方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Date-Time-Component-Methods" target="_blank" rel="noopener"><span class="nav-number">2.1.3.</span> <span class="nav-text">Date&#x2F;Time Component Methods</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-RegExp-Type-正则类型" target="_blank" rel="noopener"><span class="nav-number">2.2.</span> <span class="nav-text">The RegExp Type  正则类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RegExp-Instance-Properties" target="_blank" rel="noopener"><span class="nav-number">2.2.1.</span> <span class="nav-text">RegExp Instance Properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RegExp-Instance-Methods-RegExp-实例方法" target="_blank" rel="noopener"><span class="nav-number">2.2.2.</span> <span class="nav-text">RegExp Instance Methods  RegExp 实例方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RegExp-Constructor-Properties-构造函数属性" target="_blank" rel="noopener"><span class="nav-number">2.2.3.</span> <span class="nav-text">RegExp Constructor Properties 构造函数属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pattern-Limitations" target="_blank" rel="noopener"><span class="nav-number">2.2.4.</span> <span class="nav-text">Pattern Limitations</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Primitive-Wrapper-Types-基本包装类型" target="_blank" rel="noopener"><span class="nav-number">2.3.</span> <span class="nav-text">Primitive Wrapper Types 基本包装类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Boolean-Type" target="_blank" rel="noopener"><span class="nav-number">2.3.1.</span> <span class="nav-text">The Boolean Type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Number-Type" target="_blank" rel="noopener"><span class="nav-number">2.3.2.</span> <span class="nav-text">The Number Type</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#The-isInteger-Method-and-Safe-Integers-安全整数" target="_blank" rel="noopener"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">The isInteger() Method and Safe Integers  安全整数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-JavaScript-Character-JS-字符" target="_blank" rel="noopener"><span class="nav-number">2.3.2.2.</span> <span class="nav-text">The JavaScript Character  JS 字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-normalize-Method" target="_blank" rel="noopener"><span class="nav-number">2.3.2.3.</span> <span class="nav-text">The normalize() Method</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-Manipulation-Methods" target="_blank" rel="noopener"><span class="nav-number">2.3.2.4.</span> <span class="nav-text">String-Manipulation Methods</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-Inclusion-Methods-字符串位置方法" target="_blank" rel="noopener"><span class="nav-number">2.3.2.5.</span> <span class="nav-text">String Inclusion Methods  字符串位置方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-Inclusion-Methods" target="_blank" rel="noopener"><span class="nav-number">2.3.2.6.</span> <span class="nav-text">String Inclusion Methods</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-trim-Method" target="_blank" rel="noopener"><span class="nav-number">2.3.2.7.</span> <span class="nav-text">The trim() Method</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-repeat-Method" target="_blank" rel="noopener"><span class="nav-number">2.3.2.8.</span> <span class="nav-text">The repeat() Method</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-padStart-and-padEnd-Methods" target="_blank" rel="noopener"><span class="nav-number">2.3.2.9.</span> <span class="nav-text">The padStart() and padEnd() Methods</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-Iterators-and-Destructuring" target="_blank" rel="noopener"><span class="nav-number">2.3.2.10.</span> <span class="nav-text">String Iterators and Destructuring</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-Case-Methods" target="_blank" rel="noopener"><span class="nav-number">2.3.2.11.</span> <span class="nav-text">String Case Methods</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-Pattern-Matching-Methods-字符串的模式匹配方法" target="_blank" rel="noopener"><span class="nav-number">2.3.2.12.</span> <span class="nav-text">String Pattern-Matching Methods  字符串的模式匹配方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-localeCompare-Method" target="_blank" rel="noopener"><span class="nav-number">2.3.2.13.</span> <span class="nav-text">The localeCompare() Method</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML-Methods" target="_blank" rel="noopener"><span class="nav-number">2.3.2.14.</span> <span class="nav-text">HTML Methods</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Singleton-Built-in-objects-单体内置对象" target="_blank" rel="noopener"><span class="nav-number">2.4.</span> <span class="nav-text">Singleton Built-in objects  单体内置对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Global-Object" target="_blank" rel="noopener"><span class="nav-number">2.4.1.</span> <span class="nav-text">The Global Object</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#URI-Encoding-Methods" target="_blank" rel="noopener"><span class="nav-number">2.4.1.1.</span> <span class="nav-text">URI-Encoding Methods</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-eval-Method" target="_blank" rel="noopener"><span class="nav-number">2.4.1.2.</span> <span class="nav-text">The eval() Method</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Global-Object-Properties" target="_blank" rel="noopener"><span class="nav-number">2.4.1.3.</span> <span class="nav-text">Global Object Properties</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Window-Object" target="_blank" rel="noopener"><span class="nav-number">2.4.1.4.</span> <span class="nav-text">The Window Object</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Math-Object" target="_blank" rel="noopener"><span class="nav-number">2.4.2.</span> <span class="nav-text">The Math Object</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Math-Object-Properties" target="_blank" rel="noopener"><span class="nav-number">2.4.2.1.</span> <span class="nav-text">Math Object Properties</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-min-and-max-Methods" target="_blank" rel="noopener"><span class="nav-number">2.4.2.2.</span> <span class="nav-text">The min() and max() Methods</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rounding-Methods" target="_blank" rel="noopener"><span class="nav-number">2.4.2.3.</span> <span class="nav-text">Rounding Methods</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-random-Method" target="_blank" rel="noopener"><span class="nav-number">2.4.2.4.</span> <span class="nav-text">The random() Method</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Other-Methods" target="_blank" rel="noopener"><span class="nav-number">2.4.2.5.</span> <span class="nav-text">Other Methods</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary-1" target="_blank" rel="noopener"><span class="nav-number">2.5.</span> <span class="nav-text">Summary</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#COLLECTION-REFERENCE-TYPES" target="_blank" rel="noopener"><span class="nav-number">3.</span> <span class="nav-text">COLLECTION REFERENCE TYPES</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-object-Type" target="_blank" rel="noopener"><span class="nav-number">3.1.</span> <span class="nav-text">The object Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Array-Type-170" target="_blank" rel="noopener"><span class="nav-number">3.2.</span> <span class="nav-text">The Array Type 170</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Creating-Arrays-170" target="_blank" rel="noopener"><span class="nav-number">3.2.1.</span> <span class="nav-text">Creating Arrays 170</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-Holes-172-数组空" target="_blank" rel="noopener"><span class="nav-number">3.2.2.</span> <span class="nav-text">Array Holes 172  数组空</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Indexing-into-Arrays-174" target="_blank" rel="noopener"><span class="nav-number">3.2.3.</span> <span class="nav-text">Indexing into Arrays 174</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Detecting-Arrays-175" target="_blank" rel="noopener"><span class="nav-number">3.2.4.</span> <span class="nav-text">Detecting Arrays 175</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Iterator-Methods-176-迭代器方法" target="_blank" rel="noopener"><span class="nav-number">3.2.5.</span> <span class="nav-text">Iterator Methods 176  迭代器方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Copy-and-Fill-Methods-176" target="_blank" rel="noopener"><span class="nav-number">3.2.6.</span> <span class="nav-text">Copy and Fill Methods 176</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conversion-Methods-179-转换方法" target="_blank" rel="noopener"><span class="nav-number">3.2.7.</span> <span class="nav-text">Conversion Methods 179  转换方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stack-Methods-180-栈方法" target="_blank" rel="noopener"><span class="nav-number">3.2.8.</span> <span class="nav-text">Stack Methods 180 栈方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Queue-Methods-181-队列方法" target="_blank" rel="noopener"><span class="nav-number">3.2.9.</span> <span class="nav-text">Queue Methods 181 队列方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reordering-Methods-重排序方法" target="_blank" rel="noopener"><span class="nav-number">3.2.10.</span> <span class="nav-text">Reordering Methods 重排序方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Manipulation-Methods-184-操作方法" target="_blank" rel="noopener"><span class="nav-number">3.2.11.</span> <span class="nav-text">Manipulation Methods 184 操作方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Search-and-Location-Methods-186-搜索和定位方法、" target="_blank" rel="noopener"><span class="nav-number">3.2.12.</span> <span class="nav-text">Search and Location Methods 186 搜索和定位方法、</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Strict-Equivalence-186-严格对等" target="_blank" rel="noopener"><span class="nav-number">3.2.12.1.</span> <span class="nav-text">Strict Equivalence 186 严格对等</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Predicate-Search-187-谓词搜索" target="_blank" rel="noopener"><span class="nav-number">3.2.12.2.</span> <span class="nav-text">Predicate Search 187 谓词搜索</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Iterative-Methods-188-迭代方法" target="_blank" rel="noopener"><span class="nav-number">3.2.13.</span> <span class="nav-text">Iterative Methods 188 迭代方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reduction-Methods-189-归并方法" target="_blank" rel="noopener"><span class="nav-number">3.2.14.</span> <span class="nav-text">Reduction Methods 189 归并方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Typed-Arrays-190" target="_blank" rel="noopener"><span class="nav-number">3.3.</span> <span class="nav-text">Typed Arrays 190</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#History-190" target="_blank" rel="noopener"><span class="nav-number">3.3.1.</span> <span class="nav-text">History 190</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#WebGL-190" target="_blank" rel="noopener"><span class="nav-number">3.3.1.1.</span> <span class="nav-text">WebGL 190</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Emergence-of-Typed-Arrays-191" target="_blank" rel="noopener"><span class="nav-number">3.3.1.2.</span> <span class="nav-text">Emergence of Typed Arrays 191</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-ArrayBuffers-191" target="_blank" rel="noopener"><span class="nav-number">3.3.2.</span> <span class="nav-text">Using ArrayBuffers 191</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DataViews-192" target="_blank" rel="noopener"><span class="nav-number">3.3.3.</span> <span class="nav-text">DataViews 192</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ElementType-193" target="_blank" rel="noopener"><span class="nav-number">3.3.3.1.</span> <span class="nav-text">ElementType 193</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Big-Endian-and-Little-Endian-194" target="_blank" rel="noopener"><span class="nav-number">3.3.3.2.</span> <span class="nav-text">Big-Endian and Little-Endian 194</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Corner-Cases-195" target="_blank" rel="noopener"><span class="nav-number">3.3.3.3.</span> <span class="nav-text">Corner Cases 195</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Typed-Arrays-196" target="_blank" rel="noopener"><span class="nav-number">3.3.4.</span> <span class="nav-text">Typed Arrays 196</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Typed-Array-Behavior-197" target="_blank" rel="noopener"><span class="nav-number">3.3.4.1.</span> <span class="nav-text">Typed Array Behavior 197</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Merging-Copying-and-Changing-Typed-Arrays-198" target="_blank" rel="noopener"><span class="nav-number">3.3.4.2.</span> <span class="nav-text">Merging, Copying, and Changing Typed Arrays 198</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Underflow-and-Overflow-200" target="_blank" rel="noopener"><span class="nav-number">3.3.4.3.</span> <span class="nav-text">Underflow and Overflow 200</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Map-Type-201" target="_blank" rel="noopener"><span class="nav-number">3.4.</span> <span class="nav-text">The Map Type 201</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Basic-API-201-Order-and-Iteration-203" target="_blank" rel="noopener"><span class="nav-number">3.4.1.</span> <span class="nav-text">Basic API 201 Order and Iteration 203</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#顺序和迭代" target="_blank" rel="noopener"><span class="nav-number">3.4.2.</span> <span class="nav-text">顺序和迭代</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Choosing-Between-Objects-and-Maps-206" target="_blank" rel="noopener"><span class="nav-number">3.4.3.</span> <span class="nav-text">Choosing Between Objects and Maps 206</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Memory-Profile-206" target="_blank" rel="noopener"><span class="nav-number">3.4.3.1.</span> <span class="nav-text">Memory Profile 206</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Insertion-Performance-206" target="_blank" rel="noopener"><span class="nav-number">3.4.3.2.</span> <span class="nav-text">Insertion Performance 206</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Lookup-Performance-206" target="_blank" rel="noopener"><span class="nav-number">3.4.3.3.</span> <span class="nav-text">Lookup Performance 206</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Delete-Performance-206" target="_blank" rel="noopener"><span class="nav-number">3.4.3.4.</span> <span class="nav-text">Delete Performance 206</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-WeakMap-Type-206-弱映射类型" target="_blank" rel="noopener"><span class="nav-number">3.5.</span> <span class="nav-text">The WeakMap Type 206 弱映射类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Set-Type-211" target="_blank" rel="noopener"><span class="nav-number">3.6.</span> <span class="nav-text">The Set Type 211</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ITERATORS-AND-GENERATORS-迭代器和生成器" target="_blank" rel="noopener"><span class="nav-number">4.</span> <span class="nav-text">ITERATORS AND GENERATORS 迭代器和生成器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction-to-Iteration" target="_blank" rel="noopener"><span class="nav-number">4.1.</span> <span class="nav-text">Introduction to Iteration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Iterator-Pattern" target="_blank" rel="noopener"><span class="nav-number">4.2.</span> <span class="nav-text">The Iterator Pattern</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Iterable-Protocol" target="_blank" rel="noopener"><span class="nav-number">4.2.1.</span> <span class="nav-text">The Iterable Protocol</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Iterator-Protocol" target="_blank" rel="noopener"><span class="nav-number">4.2.2.</span> <span class="nav-text">The Iterator Protocol</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Custom-Iterator-Definition" target="_blank" rel="noopener"><span class="nav-number">4.2.3.</span> <span class="nav-text">Custom Iterator Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Early-Termination-of-Iterators" target="_blank" rel="noopener"><span class="nav-number">4.2.4.</span> <span class="nav-text">Early Termination of Iterators</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generators" target="_blank" rel="noopener"><span class="nav-number">4.3.</span> <span class="nav-text">Generators</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Generator-Basics" target="_blank" rel="noopener"><span class="nav-number">4.3.1.</span> <span class="nav-text">Generator Basics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Interrupting-Execution-with-“yield”" target="_blank" rel="noopener"><span class="nav-number">4.3.2.</span> <span class="nav-text">Interrupting Execution with “yield”</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Using-a-Generator-Object-as-an-Iterable" target="_blank" rel="noopener"><span class="nav-number">4.3.2.1.</span> <span class="nav-text">Using a Generator Object as an Iterable</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Using-“yield”-for-Input-and-Output" target="_blank" rel="noopener"><span class="nav-number">4.3.2.2.</span> <span class="nav-text">Using “yield” for Input and Output</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Yielding-an-Iterable" target="_blank" rel="noopener"><span class="nav-number">4.3.2.3.</span> <span class="nav-text">Yielding an Iterable</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Recursive-Algorithms-Using-yield" target="_blank" rel="noopener"><span class="nav-number">4.3.2.4.</span> <span class="nav-text">Recursive Algorithms Using yield*</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-a-Generator-as-the-Default-Iterator" target="_blank" rel="noopener"><span class="nav-number">4.3.3.</span> <span class="nav-text">Using a Generator as the Default Iterator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Early-Termination-of-Generators" target="_blank" rel="noopener"><span class="nav-number">4.3.4.</span> <span class="nav-text">Early Termination of Generators</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#The-return-Method" target="_blank" rel="noopener"><span class="nav-number">4.3.4.1.</span> <span class="nav-text">The return() Method</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-throw-Method" target="_blank" rel="noopener"><span class="nav-number">4.3.4.2.</span> <span class="nav-text">The throw() Method</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary-2" target="_blank" rel="noopener"><span class="nav-number">4.4.</span> <span class="nav-text">Summary</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Objects-Classes-and-ObjectOriented-Programming" target="_blank" rel="noopener"><span class="nav-number">5.</span> <span class="nav-text">Objects, Classes, and ObjectOriented Programming</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#UNDERSTANDING-OBJECTS" target="_blank" rel="noopener"><span class="nav-number">5.1.</span> <span class="nav-text">UNDERSTANDING OBJECTS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Types-of-Properties-属性类型" target="_blank" rel="noopener"><span class="nav-number">5.1.1.</span> <span class="nav-text">Types of Properties 属性类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Data-Properties" target="_blank" rel="noopener"><span class="nav-number">5.1.1.1.</span> <span class="nav-text">Data Properties</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#访问器属性" target="_blank" rel="noopener"><span class="nav-number">5.1.1.1.1.</span> <span class="nav-text">访问器属性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义多个属性" target="_blank" rel="noopener"><span class="nav-number">5.1.2.</span> <span class="nav-text">定义多个属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Merging-Objects-合并对象" target="_blank" rel="noopener"><span class="nav-number">5.1.3.</span> <span class="nav-text">Merging Objects 合并对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象定义和平等" target="_blank" rel="noopener"><span class="nav-number">5.1.4.</span> <span class="nav-text">对象定义和平等</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增强对象语法" target="_blank" rel="noopener"><span class="nav-number">5.1.5.</span> <span class="nav-text">增强对象语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Property-Value-Shorthand-属性值简写" target="_blank" rel="noopener"><span class="nav-number">5.1.5.1.</span> <span class="nav-text">Property Value Shorthand 属性值简写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算属性键" target="_blank" rel="noopener"><span class="nav-number">5.1.5.2.</span> <span class="nav-text">计算属性键</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Concise-Method-Syntax-简洁方法语法" target="_blank" rel="noopener"><span class="nav-number">5.1.5.2.1.</span> <span class="nav-text">Concise Method Syntax  简洁方法语法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-Destructuring-对象分解" target="_blank" rel="noopener"><span class="nav-number">5.1.6.</span> <span class="nav-text">Object Destructuring  对象分解</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Nested-Destructuring-嵌套解构" target="_blank" rel="noopener"><span class="nav-number">5.1.6.0.1.</span> <span class="nav-text">Nested Destructuring  嵌套解构</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Partial-Destructuring-Completion-部分解构完成" target="_blank" rel="noopener"><span class="nav-number">5.1.6.1.</span> <span class="nav-text">Partial Destructuring Completion 部分解构完成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Parameter-Context-Matching-参数上下文匹配" target="_blank" rel="noopener"><span class="nav-number">5.1.6.2.</span> <span class="nav-text">Parameter Context Matching 参数上下文匹配</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OBJECT-CREATION-创建对象" target="_blank" rel="noopener"><span class="nav-number">5.2.</span> <span class="nav-text">OBJECT CREATION 创建对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Overview-总览" target="_blank" rel="noopener"><span class="nav-number">5.2.1.</span> <span class="nav-text">Overview 总览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Factory-Pattern-工厂模式" target="_blank" rel="noopener"><span class="nav-number">5.2.2.</span> <span class="nav-text">The Factory Pattern  工厂模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数模式-The-Function-Constructor-Pattern" target="_blank" rel="noopener"><span class="nav-number">5.2.3.</span> <span class="nav-text">构造函数模式 The Function Constructor Pattern</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Constructors-as-Functions-将构造函数当作函数" target="_blank" rel="noopener"><span class="nav-number">5.2.3.1.</span> <span class="nav-text">Constructors as Functions 将构造函数当作函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Problems-with-Constructors-构造函数问题" target="_blank" rel="noopener"><span class="nav-number">5.2.3.2.</span> <span class="nav-text">Problems with Constructors 构造函数问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Prototype-Pattern-原型模式" target="_blank" rel="noopener"><span class="nav-number">5.2.4.</span> <span class="nav-text">The Prototype Pattern 原型模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#How-Prototypes-Work" target="_blank" rel="noopener"><span class="nav-number">5.2.4.1.</span> <span class="nav-text">How Prototypes Work</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#How-Prototypes-Work-理解原型对象" target="_blank" rel="noopener"><span class="nav-number">5.2.4.1.1.</span> <span class="nav-text">How Prototypes Work 理解原型对象</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Understanding-the-Prototype-Hierarchy-了解原型层次结构" target="_blank" rel="noopener"><span class="nav-number">5.2.4.2.</span> <span class="nav-text">Understanding the Prototype Hierarchy  了解原型层次结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Prototypes-and-the-“in”-Operator-原型与In操作符" target="_blank" rel="noopener"><span class="nav-number">5.2.4.3.</span> <span class="nav-text">Prototypes and the “in” Operator  原型与In操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Property-Enumeration-Order-属性列举顺序" target="_blank" rel="noopener"><span class="nav-number">5.2.4.4.</span> <span class="nav-text">Property Enumeration Order  属性列举顺序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-Iteration" target="_blank" rel="noopener"><span class="nav-number">5.2.5.</span> <span class="nav-text">Object Iteration</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Alternate-Prototype-Syntax-另外的原型语法" target="_blank" rel="noopener"><span class="nav-number">5.2.5.1.</span> <span class="nav-text">Alternate Prototype Syntax  另外的原型语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dynamic-Nature-of-Prototypes-原型动态性" target="_blank" rel="noopener"><span class="nav-number">5.2.5.2.</span> <span class="nav-text">Dynamic Nature of Prototypes 原型动态性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Native-Object-Prototypes-原生对象的原型" target="_blank" rel="noopener"><span class="nav-number">5.2.5.3.</span> <span class="nav-text">Native Object Prototypes 原生对象的原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Problems-with-Prototypes-原型对象的问题" target="_blank" rel="noopener"><span class="nav-number">5.2.5.4.</span> <span class="nav-text">Problems with Prototypes 原型对象的问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inheritance-继承" target="_blank" rel="noopener"><span class="nav-number">5.3.</span> <span class="nav-text">Inheritance 继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Prototype-Chaining" target="_blank" rel="noopener"><span class="nav-number">5.3.1.</span> <span class="nav-text">Prototype Chaining</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Default-Prototypes-默认原型" target="_blank" rel="noopener"><span class="nav-number">5.3.2.</span> <span class="nav-text">Default Prototypes  默认原型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Prototype-and-Instance-Relationships-原型与实例的关系" target="_blank" rel="noopener"><span class="nav-number">5.3.3.</span> <span class="nav-text">Prototype and Instance Relationships  原型与实例的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用方法" target="_blank" rel="noopener"><span class="nav-number">5.3.4.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problems-with-Prototype-Chaining" target="_blank" rel="noopener"><span class="nav-number">5.3.5.</span> <span class="nav-text">Problems with Prototype Chaining</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Constructor-Stealing-借用构造函数" target="_blank" rel="noopener"><span class="nav-number">5.3.6.</span> <span class="nav-text">Constructor Stealing 借用构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Passing-Arguments-传递参数" target="_blank" rel="noopener"><span class="nav-number">5.3.6.1.</span> <span class="nav-text">Passing Arguments  传递参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Problems-with-Constructor-Stealing-借用构造函数的问题" target="_blank" rel="noopener"><span class="nav-number">5.3.6.2.</span> <span class="nav-text">Problems with Constructor Stealing  借用构造函数的问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Combination-Inheritance-组合继承" target="_blank" rel="noopener"><span class="nav-number">5.3.7.</span> <span class="nav-text">Combination Inheritance 组合继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型继承" target="_blank" rel="noopener"><span class="nav-number">5.3.8.</span> <span class="nav-text">原型继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Parasitic-Inheritance-寄生式继承" target="_blank" rel="noopener"><span class="nav-number">5.3.9.</span> <span class="nav-text">Parasitic Inheritance 寄生式继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Parasitic-Combination-Inheritance-寄生组合式继承" target="_blank" rel="noopener"><span class="nav-number">5.3.10.</span> <span class="nav-text">Parasitic Combination Inheritance 寄生组合式继承</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Classes-类" target="_blank" rel="noopener"><span class="nav-number">5.4.</span> <span class="nav-text">Classes 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类的定义基础" target="_blank" rel="noopener"><span class="nav-number">5.4.1.</span> <span class="nav-text">类的定义基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Class-Composition-类的组成" target="_blank" rel="noopener"><span class="nav-number">5.4.1.1.</span> <span class="nav-text">Class Composition 类的组成</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Class-Constructor-类构造器" target="_blank" rel="noopener"><span class="nav-number">5.4.2.</span> <span class="nav-text">The Class Constructor 类构造器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Instantiation-实例化" target="_blank" rel="noopener"><span class="nav-number">5.4.2.1.</span> <span class="nav-text">Instantiation 实例化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Understanding-Classes-as-Special-Functions" target="_blank" rel="noopener"><span class="nav-number">5.4.2.2.</span> <span class="nav-text">Understanding Classes as Special Functions</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instance-Prototype-and-Class-Members" target="_blank" rel="noopener"><span class="nav-number">5.4.3.</span> <span class="nav-text">Instance, Prototype, and Class Members</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Instance-Members" target="_blank" rel="noopener"><span class="nav-number">5.4.3.1.</span> <span class="nav-text">Instance Members</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Prototype-Methods-and-Accessors" target="_blank" rel="noopener"><span class="nav-number">5.4.3.2.</span> <span class="nav-text">Prototype Methods and Accessors</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Static-Class-Methods-and-Accessors" target="_blank" rel="noopener"><span class="nav-number">5.4.3.3.</span> <span class="nav-text">Static Class Methods and Accessors</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Non-Function-Prototype-and-Class-Members" target="_blank" rel="noopener"><span class="nav-number">5.4.3.4.</span> <span class="nav-text">Non-Function Prototype and Class Members</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Iterator-and-Generator-Methods" target="_blank" rel="noopener"><span class="nav-number">5.4.3.5.</span> <span class="nav-text">Iterator and Generator Methods</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inheritance" target="_blank" rel="noopener"><span class="nav-number">5.4.4.</span> <span class="nav-text">Inheritance</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Inheritance-Basics" target="_blank" rel="noopener"><span class="nav-number">5.4.4.1.</span> <span class="nav-text">Inheritance Basics</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Constructors-HomeObjects-and-super" target="_blank" rel="noopener"><span class="nav-number">5.4.4.2.</span> <span class="nav-text">Constructors, HomeObjects, and super()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Abstract-Base-Classes" target="_blank" rel="noopener"><span class="nav-number">5.4.4.3.</span> <span class="nav-text">Abstract Base Classes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Inheriting-from-Built-in-Types" target="_blank" rel="noopener"><span class="nav-number">5.4.4.4.</span> <span class="nav-text">Inheriting from Built-in Types</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Class-Mixins" target="_blank" rel="noopener"><span class="nav-number">5.4.4.5.</span> <span class="nav-text">Class Mixins</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PROXIES-AND-REFLECT" target="_blank" rel="noopener"><span class="nav-number">6.</span> <span class="nav-text">PROXIES AND REFLECT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FUNCTIONS" target="_blank" rel="noopener"><span class="nav-number">7.</span> <span class="nav-text">FUNCTIONS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Arrow-Functions-箭头函数" target="_blank" rel="noopener"><span class="nav-number">7.1.</span> <span class="nav-text">Arrow Functions 箭头函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function-names" target="_blank" rel="noopener"><span class="nav-number">7.2.</span> <span class="nav-text">Function names</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Understanding-Arguments-理解参数" target="_blank" rel="noopener"><span class="nav-number">7.3.</span> <span class="nav-text">Understanding Arguments  理解参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Arguments-in-Arrow-Functions-箭头函数中的参数" target="_blank" rel="noopener"><span class="nav-number">7.3.1.</span> <span class="nav-text">Arguments in Arrow Functions 箭头函数中的参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#no-overloading-没有重载" target="_blank" rel="noopener"><span class="nav-number">7.4.</span> <span class="nav-text">no overloading  没有重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Default-Parameter-Values-默认参数值" target="_blank" rel="noopener"><span class="nav-number">7.5.</span> <span class="nav-text">Default Parameter Values 默认参数值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Default-Parameter-Scope-and-Temporal-Dead-Zone-默认参数范围和暂时死区" target="_blank" rel="noopener"><span class="nav-number">7.5.1.</span> <span class="nav-text">Default Parameter Scope and Temporal Dead Zone 默认参数范围和暂时死区</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spread-Arguments-and-Rest-Parameters-展开参数和剩余参数" target="_blank" rel="noopener"><span class="nav-number">7.6.</span> <span class="nav-text">Spread Arguments and Rest Parameters 展开参数和剩余参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spread-Arguments-展开参数" target="_blank" rel="noopener"><span class="nav-number">7.6.1.</span> <span class="nav-text">Spread Arguments 展开参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rest-Parameter-剩余参数" target="_blank" rel="noopener"><span class="nav-number">7.6.2.</span> <span class="nav-text">Rest Parameter 剩余参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function-Declarations-versus-Function-Expressions-函数声明与函数表达式" target="_blank" rel="noopener"><span class="nav-number">7.7.</span> <span class="nav-text">Function Declarations versus Function Expressions 函数声明与函数表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Functions-as-Values-作为值的函数" target="_blank" rel="noopener"><span class="nav-number">7.8.</span> <span class="nav-text">Functions as Values 作为值的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function-Internals-函数内部属性" target="_blank" rel="noopener"><span class="nav-number">7.9.</span> <span class="nav-text">Function Internals 函数内部属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#arguments" target="_blank" rel="noopener"><span class="nav-number">7.9.1.</span> <span class="nav-text">arguments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this" target="_blank" rel="noopener"><span class="nav-number">7.9.2.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#caller" target="_blank" rel="noopener"><span class="nav-number">7.9.3.</span> <span class="nav-text">caller</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#new-target" target="_blank" rel="noopener"><span class="nav-number">7.9.4.</span> <span class="nav-text">new.target</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function-Properties-and-Methods-函数属性和方法" target="_blank" rel="noopener"><span class="nav-number">7.10.</span> <span class="nav-text">Function Properties and Methods 函数属性和方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function-Expressions" target="_blank" rel="noopener"><span class="nav-number">7.11.</span> <span class="nav-text">Function Expressions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Recursion-递归" target="_blank" rel="noopener"><span class="nav-number">7.12.</span> <span class="nav-text">Recursion 递归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tail-Call-optimization-尾调用优化-418页" target="_blank" rel="noopener"><span class="nav-number">7.13.</span> <span class="nav-text">Tail Call optimization 尾调用优化 418页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tail-Call-Optimization-Requirements" target="_blank" rel="noopener"><span class="nav-number">7.13.1.</span> <span class="nav-text">Tail Call Optimization Requirements</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Coding-for-Tail-Call-Optimization" target="_blank" rel="noopener"><span class="nav-number">7.13.2.</span> <span class="nav-text">Coding for Tail Call Optimization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Closures-闭包" target="_blank" rel="noopener"><span class="nav-number">7.14.</span> <span class="nav-text">Closures 闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-this-Object-this对象" target="_blank" rel="noopener"><span class="nav-number">7.14.1.</span> <span class="nav-text">The this Object  this对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Memory-Leaks-426也" target="_blank" rel="noopener"><span class="nav-number">7.14.2.</span> <span class="nav-text">Memory Leaks 426也</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Immediately-Invoked-Function-Expressions-426页" target="_blank" rel="noopener"><span class="nav-number">7.15.</span> <span class="nav-text">Immediately Invoked Function Expressions 426页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Private-Variables-私有变量" target="_blank" rel="noopener"><span class="nav-number">7.16.</span> <span class="nav-text">Private Variables 私有变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Static-Private-Variables-静态私有变量-429" target="_blank" rel="noopener"><span class="nav-number">7.16.1.</span> <span class="nav-text">Static Private Variables 静态私有变量 429</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Module-Pattern" target="_blank" rel="noopener"><span class="nav-number">7.16.2.</span> <span class="nav-text">The Module Pattern</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Module-Augmentation-Pattern" target="_blank" rel="noopener"><span class="nav-number">7.16.3.</span> <span class="nav-text">The Module-Augmentation Pattern</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PROMISES-AND-ASYNC-FUNCTIONS" target="_blank" rel="noopener"><span class="nav-number">8.</span> <span class="nav-text">PROMISES AND ASYNC FUNCTIONS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction-to-Asynchronous-Programming-异步编程简介" target="_blank" rel="noopener"><span class="nav-number">8.1.</span> <span class="nav-text">Introduction to Asynchronous Programming 异步编程简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Synchronous-vs-Asynchronous-JavaScript" target="_blank" rel="noopener"><span class="nav-number">8.1.1.</span> <span class="nav-text">Synchronous vs. Asynchronous JavaScript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Legacy-Asynchronous-Programming-Patterns-旧版异步编程模式" target="_blank" rel="noopener"><span class="nav-number">8.1.2.</span> <span class="nav-text">Legacy Asynchronous Programming Patterns 旧版异步编程模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Returning-Asynchronous-Values" target="_blank" rel="noopener"><span class="nav-number">8.1.2.1.</span> <span class="nav-text">Returning Asynchronous Values</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Handling-Failure" target="_blank" rel="noopener"><span class="nav-number">8.1.2.2.</span> <span class="nav-text">Handling Failure</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nesting-Asynchronous-Callbacks" target="_blank" rel="noopener"><span class="nav-number">8.1.2.3.</span> <span class="nav-text">Nesting Asynchronous Callbacks</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promises" target="_blank" rel="noopener"><span class="nav-number">8.2.</span> <span class="nav-text">Promises</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Promises-A-Specification" target="_blank" rel="noopener"><span class="nav-number">8.2.1.</span> <span class="nav-text">The Promises&#x2F;A+ Specification</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-Basics" target="_blank" rel="noopener"><span class="nav-number">8.2.2.</span> <span class="nav-text">Promise Basics</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Promise-State-Machine" target="_blank" rel="noopener"><span class="nav-number">8.2.2.1.</span> <span class="nav-text">The Promise State Machine</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Resolved-Values-Rejection-Reasons-and-Utility-of-Promises" target="_blank" rel="noopener"><span class="nav-number">8.2.2.2.</span> <span class="nav-text">Resolved Values, Rejection Reasons, and Utility of Promises</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Controlling-Promise-State-with-the-Executor" target="_blank" rel="noopener"><span class="nav-number">8.2.2.3.</span> <span class="nav-text">Controlling Promise State with the Executor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise-Casting-with-Promise-resolve" target="_blank" rel="noopener"><span class="nav-number">8.2.2.4.</span> <span class="nav-text">Promise Casting with Promise.resolve()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise-Rejection-with-Promise-reject" target="_blank" rel="noopener"><span class="nav-number">8.2.2.5.</span> <span class="nav-text">Promise Rejection with Promise.reject()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Synchronous-Asynchronous-Execution-Duality" target="_blank" rel="noopener"><span class="nav-number">8.2.2.6.</span> <span class="nav-text">Synchronous&#x2F;Asynchronous Execution Duality</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-Instance-Methods" target="_blank" rel="noopener"><span class="nav-number">8.2.3.</span> <span class="nav-text">Promise Instance Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Implementing-the-Thenable-Interface" target="_blank" rel="noopener"><span class="nav-number">8.2.3.1.</span> <span class="nav-text">Implementing the Thenable Interface</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise-prototype-then" target="_blank" rel="noopener"><span class="nav-number">8.2.3.2.</span> <span class="nav-text">Promise.prototype.then()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null" target="_blank" rel="noopener"><span class="nav-number">8.2.3.3.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-1" target="_blank" rel="noopener"><span class="nav-number">8.2.3.4.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-2" target="_blank" rel="noopener"><span class="nav-number">8.2.3.5.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-3" target="_blank" rel="noopener"><span class="nav-number">8.2.3.6.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-4" target="_blank" rel="noopener"><span class="nav-number">8.2.3.7.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-5" target="_blank" rel="noopener"><span class="nav-number">8.2.3.8.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-Chaining-and-Composition" target="_blank" rel="noopener"><span class="nav-number">8.2.4.</span> <span class="nav-text">Promise Chaining and Composition</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#-6" target="_blank" rel="noopener"><span class="nav-number">8.2.4.1.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-7" target="_blank" rel="noopener"><span class="nav-number">8.2.4.2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-8" target="_blank" rel="noopener"><span class="nav-number">8.2.4.3.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-9" target="_blank" rel="noopener"><span class="nav-number">8.2.4.4.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-10" target="_blank" rel="noopener"><span class="nav-number">8.2.4.5.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#-11" target="_blank" rel="noopener"><span class="nav-number">8.2.4.5.1.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#-12" target="_blank" rel="noopener"><span class="nav-number">8.2.4.5.2.</span> <span class="nav-text"></span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Async-Functions" target="_blank" rel="noopener"><span class="nav-number">8.2.5.</span> <span class="nav-text">Async Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Async-Function-Basics" target="_blank" rel="noopener"><span class="nav-number">8.2.5.1.</span> <span class="nav-text">Async Function Basics</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#The-async-keyword" target="_blank" rel="noopener"><span class="nav-number">8.2.5.1.1.</span> <span class="nav-text">The async keyword</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#THE-BROWSER-OBJECT-MODEL" target="_blank" rel="noopener"><span class="nav-number">9.</span> <span class="nav-text">THE BROWSER OBJECT MODEL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-window-object" target="_blank" rel="noopener"><span class="nav-number">9.1.</span> <span class="nav-text">The window object</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Global-Scope-全局作用域" target="_blank" rel="noopener"><span class="nav-number">9.1.1.</span> <span class="nav-text">The Global Scope 全局作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Window-Relationships-窗口关系" target="_blank" rel="noopener"><span class="nav-number">9.1.2.</span> <span class="nav-text">Window Relationships 窗口关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Window-Position-and-Pixel-Ratio-窗口关系和框架" target="_blank" rel="noopener"><span class="nav-number">9.1.3.</span> <span class="nav-text">Window Position and Pixel Ratio 窗口关系和框架</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Pixel-Ratios-像素比例" target="_blank" rel="noopener"><span class="nav-number">9.1.3.1.</span> <span class="nav-text">Pixel Ratios 像素比例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Window-Size-窗口大小" target="_blank" rel="noopener"><span class="nav-number">9.1.4.</span> <span class="nav-text">Window Size 窗口大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Window-Viewport-Position" target="_blank" rel="noopener"><span class="nav-number">9.1.5.</span> <span class="nav-text">Window Viewport Position</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Navigating-and-Opening-Windows-导航和打开窗口" target="_blank" rel="noopener"><span class="nav-number">9.1.6.</span> <span class="nav-text">Navigating and Opening Windows 导航和打开窗口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Popping-Up-Windows" target="_blank" rel="noopener"><span class="nav-number">9.1.6.1.</span> <span class="nav-text">Popping Up Windows</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Security-Restrictions" target="_blank" rel="noopener"><span class="nav-number">9.1.6.2.</span> <span class="nav-text">Security Restrictions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pop-up-Blockers" target="_blank" rel="noopener"><span class="nav-number">9.1.6.3.</span> <span class="nav-text">Pop-up Blockers</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Intervals-and-Timeouts-间接调用和超时调用" target="_blank" rel="noopener"><span class="nav-number">9.1.7.</span> <span class="nav-text">Intervals and Timeouts 间接调用和超时调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#System-Dialogs-系统对话框" target="_blank" rel="noopener"><span class="nav-number">9.1.8.</span> <span class="nav-text">System Dialogs 系统对话框</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-location-object" target="_blank" rel="noopener"><span class="nav-number">9.2.</span> <span class="nav-text">The location object</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Query-String-Arguments" target="_blank" rel="noopener"><span class="nav-number">9.2.1.</span> <span class="nav-text">Query String Arguments</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#URLSearchParams" target="_blank" rel="noopener"><span class="nav-number">9.2.1.1.</span> <span class="nav-text">URLSearchParams</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Manipulating-the-Location" target="_blank" rel="noopener"><span class="nav-number">9.2.2.</span> <span class="nav-text">Manipulating the Location</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-navigator-object" target="_blank" rel="noopener"><span class="nav-number">9.3.</span> <span class="nav-text">The navigator object</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Detecting-Plug-ins" target="_blank" rel="noopener"><span class="nav-number">9.3.1.</span> <span class="nav-text">Detecting Plug-ins</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Legacy-Internet-Explorer-Plugin-Detection" target="_blank" rel="noopener"><span class="nav-number">9.3.1.1.</span> <span class="nav-text">Legacy Internet Explorer Plugin Detection</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Registering-Handlers" target="_blank" rel="noopener"><span class="nav-number">9.3.2.</span> <span class="nav-text">Registering Handlers</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-screen-object" target="_blank" rel="noopener"><span class="nav-number">9.4.</span> <span class="nav-text">The screen object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-history-object" target="_blank" rel="noopener"><span class="nav-number">9.5.</span> <span class="nav-text">The history object</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Navigation" target="_blank" rel="noopener"><span class="nav-number">9.5.1.</span> <span class="nav-text">Navigation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#History-State-Management" target="_blank" rel="noopener"><span class="nav-number">9.5.2.</span> <span class="nav-text">History State Management</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -1234,10 +1558,6 @@ Promise.prototype.them() 方法返回一个新的promise实例<figure class="hig
 
 
   
-  <script type="text/javascript" src="js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
